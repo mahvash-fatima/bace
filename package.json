@@ -1,0 +1,33 @@
+{
+ "devDependencies": {
+  "gulp": "^3.9.1",
+  "gulp-autoprefixer": "^5.0.0",
+  "gulp-checktextdomain": "^2.2.0",
+  "gulp-install": "^1.1.0",
+  "gulp-sass": "^4.0.1",
+  "gulp-uglify": "^3.0.1",
+  "pump": "^3.0.0"
+ },
+ "name": "bace",
+ "description": "Bace is a responsive multipurpose theme.",
+ "version": "1.0.0",
+ "main": "Gulpfile.js",
+ "dependencies": {
+  "gulp": "^3.9.1",
+  "gulp-sass": "^4.0.1",
+  "gulp-checktextdomain": "^2.2.0",
+  "gulp-autoprefixer": "^5.0.0",
+  "gulp-uglify": "^3.0.1",
+  "pump": "^3.0.0"
+ },
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/mahvash-fatima/bace"
+ },
+ "author": "Mahvash Fatima",
+ "license": "ISC",
+ "homepage": "https://github.com/mahvash-fatima/bace#readme"
+}
