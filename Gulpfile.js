@@ -5,12 +5,14 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
 
+//gulp-sass: https://www.npmjs.com/package/gulp-sass
 gulp.task('styles', function() {
 	gulp.src('sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('.'))
 });
 
+//gulp-checktextdomain: https://www.npmjs.com/package/gulp-checktextdomain
 gulp.task('checktextdomain', function() {
 	return gulp
 		.src('**/*.php')
@@ -35,6 +37,7 @@ gulp.task('checktextdomain', function() {
 		}));
 });
 
+// gulp-autoprefixer: https://www.npmjs.com/package/gulp-autoprefixer
 gulp.task('default', () =>
 	gulp.src('*.css')
 		.pipe(autoprefixer({
@@ -44,6 +47,7 @@ gulp.task('default', () =>
 		.pipe(gulp.dest('dist'))
 );
 
+// gulp-uglify: https://www.npmjs.com/package/gulp-uglify
 gulp.task('compress', function (cb) {
 	pump([
 			gulp.src('js/*.js'),
