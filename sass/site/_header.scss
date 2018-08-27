@@ -1,0 +1,17 @@
+.nav-link {
+	padding: 5px;
+}
+
+.navbar {
+	padding-top: 10px;
+}
+
+.navbar-nav>li:last-child a {
+	padding-right: 0;
+	border-right: none;
+}
+
+.navbar-nav {
+	text-transform: uppercase;
+	font-size: 13px;
+}

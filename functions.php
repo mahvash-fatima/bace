@@ -44,7 +44,7 @@ if ( ! function_exists( 'bace_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'bace' ),
+			'primary' => __( 'Primary Menu', 'bace' ),
 		) );
 
 		/*
@@ -120,16 +120,18 @@ add_action( 'widgets_init', 'bace_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bace_scripts() {
-	wp_enqueue_style( 'bace-style', get_stylesheet_uri() );
-
 	wp_enqueue_style( 'bace-bootstrap-style', get_template_directory_uri() . '/css/vendor/bootstrap.min.css' );
+
+	wp_enqueue_style( 'bace-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'bace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bace-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'bace-bootstrap-script', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array(), '4.1.3', true );
 	wp_enqueue_script( 'bace-jquery-script', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array(), '3.3.1', true );
+
+	wp_enqueue_script( 'bace-bootstrap-script', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array(), '4.1.3', true );
+
 	wp_enqueue_script( 'bace-bootstrap-proper-script', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array(), '1.14.3', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -165,3 +167,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';

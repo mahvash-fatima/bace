@@ -42,17 +42,25 @@
 				?>
 				<p class="site-description"><?php echo $bace_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggle-icon">Menu</span>
+			</button>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bace' ); ?></button>
+		<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'theme_location'    => 'primary',
+				'depth'             => 2,
+				'container'         => 'div',
+				'container_class'   => 'collapse navbar-collapse',
+				'container_id'      => 'bs-example-navbar-collapse-1',
+				'menu_class'        => 'nav navbar-nav',
+				'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+				'walker'            => new WP_Bootstrap_Navwalker(),
 			) );
 			?>
-		</nav><!-- #site-navigation -->
+		</nav>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content container">
