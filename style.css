@@ -363,6 +363,24 @@ a {
   margin: 0 0 1.5em; }
 
 /*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.bace-banner__slider {
+  margin-left: 0;
+  padding-left: 0; }
+
+.slick-dots {
+  bottom: 0;
+  text-align: right; }
+
+.slick-slide img {
+  width: 100%; }
+
+.slick-prev:before,
+.slick-next:before {
+  color: #404040; }
+
+/*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
 .comment-content a {
@@ -573,7 +591,13 @@ object {
   .bace-secondary-navbar-nav > li > a:hover {
     background: #c8a551; } }
 
-@media (max-width: 960px) {
+@media (min-width: 992px) {
+  .bace-banner__slider-container {
+    width: 71%; }
+  .bace-banner__content {
+    width: 29%; } }
+
+@media (max-width: 992px) {
   .custom-logo {
     max-width: 150px; } }
 

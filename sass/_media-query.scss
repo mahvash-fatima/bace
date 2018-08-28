@@ -31,7 +31,18 @@
 	}
 }
 
-@media (max-width: 960px) {
+@media (min-width: 992px) {
+	.bace-banner {
+		&__slider-container {
+			width: 71%;
+		}
+		&__content {
+			width: 29%;
+		}
+	}
+}
+
+@media (max-width: 992px) {
 	.custom-logo {
 		max-width: 150px;
 	}

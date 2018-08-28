@@ -1,0 +1,22 @@
+.bace-banner {
+	&__slider {
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+.slick-dots {
+	bottom: 0;
+	text-align: right;
+}
+
+.slick-slide {
+	img {
+		width: 100%;
+	}
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: $color__text-main;
+}

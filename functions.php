@@ -137,6 +137,8 @@ function bace_scripts() {
 
 	wp_enqueue_style( 'bace-slick-style', get_template_directory_uri() . '/css/vendor/slick.css' );
 
+	wp_enqueue_style( 'bace-slick-theme-style', get_template_directory_uri() . '/css/vendor/slick-theme.css' );
+
 	wp_enqueue_style( 'bace-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'bace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
