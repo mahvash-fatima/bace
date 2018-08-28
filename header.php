@@ -44,7 +44,7 @@
 					<p class="site-description"><?php echo $bace_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggle-icon">Menu</span>
+					<i class="navbar-toggle-icon fas fa-bars"></i>
 				</button>
 			</div><!-- .site-branding -->
 

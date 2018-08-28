@@ -122,6 +122,8 @@ add_action( 'widgets_init', 'bace_widgets_init' );
 function bace_scripts() {
 	wp_enqueue_style( 'bace-bootstrap-style', get_template_directory_uri() . '/css/vendor/bootstrap.min.css' );
 
+	wp_enqueue_style( 'bace-fontawesome-style', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css' );
+
 	wp_enqueue_style( 'bace-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'bace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
