@@ -430,6 +430,9 @@ body {
 .site-footer a {
   color: #404040; }
 
+.site-info {
+  margin-bottom: 1.25rem; }
+
 .bace-site-footer-disclaimer {
   font-size: 0.6875rem;
   padding-top: 0.5rem;
