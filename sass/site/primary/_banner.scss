@@ -3,6 +3,14 @@
 		margin-left: 0;
 		padding-left: 0;
 	}
+	&__slider-nav {
+		img {
+			border: 6px solid $color__theme-tertiary;
+		}
+	}
+	&__slider-image {
+		padding: rem-calc(2);
+	}
 }
 
 .slick-dots {
@@ -11,6 +19,9 @@
 }
 
 .slick-slide {
+	&:focus {
+		outline: 0;
+	}
 	img {
 		width: 100%;
 	}
@@ -19,4 +30,10 @@
 .slick-prev:before,
 .slick-next:before {
 	color: $color__text-main;
+}
+
+.slick-current {
+	img {
+		border-color: $color__theme-quaternary;
+	}
 }

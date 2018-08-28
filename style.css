@@ -369,9 +369,18 @@ a {
   margin-left: 0;
   padding-left: 0; }
 
+.bace-banner__slider-nav img {
+  border: 6px solid #d5ccb4; }
+
+.bace-banner__slider-image {
+  padding: 0.125rem; }
+
 .slick-dots {
   bottom: 0;
   text-align: right; }
+
+.slick-slide:focus {
+  outline: 0; }
 
 .slick-slide img {
   width: 100%; }
@@ -379,6 +388,9 @@ a {
 .slick-prev:before,
 .slick-next:before {
   color: #404040; }
+
+.slick-current img {
+  border-color: #9a844a; }
 
 /*--------------------------------------------------------------
 ## Comments
