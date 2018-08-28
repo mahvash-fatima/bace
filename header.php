@@ -27,6 +27,9 @@
 	<header id="masthead" class="site-header">
 		<div class="bace-site-header-wrapper container">
 			<div class="site-branding">
+				<button class="bace-secondary-navbar-toggle navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="navbar-toggle-icon fas fa-bars"></i>
+				</button>
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -48,7 +51,7 @@
 				</button>
 			</div><!-- .site-branding -->
 
-			<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+			<nav class="bace-primary-navbar navbar navbar-expand-md navbar-light bg-light" role="navigation">
 				<?php
 				wp_nav_menu( array(
 					'theme_location'    => 'primary',
@@ -56,13 +59,29 @@
 					'container'         => 'div',
 					'container_class'   => 'collapse navbar-collapse',
 					'container_id'      => 'bs-example-navbar-collapse-1',
-					'menu_class'        => 'nav navbar-nav',
+					'menu_class'        => 'nav navbar-nav bace-primary-navbar-nav',
 					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'            => new WP_Bootstrap_Navwalker(),
 				) );
 				?>
 			</nav>
 		</div><!-- .container -->
+		<nav class="bace-secondary-navbar navbar navbar-expand-md navbar-light bg-light" role="navigation">
+			<div class="container">
+				<?php
+				wp_nav_menu( array(
+					'theme_location'    => 'secondary',
+					'depth'             => 2,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'bs-example-navbar-collapse-2',
+					'menu_class'        => 'nav navbar-nav bace-secondary-navbar-nav',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker(),
+				) );
+				?>
+			</div>
+		</nav>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content container">

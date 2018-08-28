@@ -380,16 +380,19 @@ a {
 .nav-link {
   padding: 0.3125rem; }
 
-.navbar-nav > li:last-child a {
+.bace-primary-navbar,
+.bace-secondary-navbar {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600; }
+
+.bace-primary-navbar-nav > li:last-child a {
   padding-right: 0;
   border-right: none; }
 
-.navbar-nav > li > a:hover {
+.bace-primary-navbar-nav > li > a:hover,
+.bace-primary-navbar-nav > li > a:focus {
   background: transparent; }
-
-.navbar-nav {
-  font-size: 0.75rem;
-  text-transform: uppercase; }
 
 .navbar-toggle {
   padding: 0.625rem 0;
@@ -397,6 +400,26 @@ a {
   border: 0; }
   .navbar-toggle:hover, .navbar-toggle:focus {
     border: 0; }
+
+.bace-secondary-navbar {
+  margin-bottom: 0; }
+
+.bace-secondary-navbar-nav > li > a {
+  padding: 0.625rem; }
+
+.bace-secondary-navbar {
+  background: #e6c36e;
+  border-top: 1px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0; }
+
+.bace-primary-navbar a,
+.bace-secondary-navbar a {
+  color: #404040; }
+
+.bace-secondary-navbar-toggle {
+  float: left; }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -499,16 +522,24 @@ object {
 --------------------------------------------------------------*/
 @media (min-width: 768px) {
   .site-header {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem; }
+    padding-top: 1.25rem; }
   .bace-site-header-wrapper {
     display: flex;
-    flex-direction: column-reverse; }
-  .navbar {
+    flex-direction: column-reverse;
+    padding-bottom: 1.25rem; }
+  .bace-primary-navbar {
     margin-left: auto; }
-  .navbar-nav > li > a {
-    border-right: 1px solid;
-    line-height: 1; } }
+  .bace-primary-navbar-nav > li > a {
+    border-right: 2px solid;
+    line-height: 1; }
+  .bace-secondary-navbar-nav .current-menu-item a:visited,
+  .bace-secondary-navbar-nav > li > a:hover,
+  .bace-secondary-navbar-nav > li > a:hover {
+    color: #fff; }
+  .bace-secondary-navbar-nav .current-menu-item a,
+  .bace-secondary-navbar-nav > li > a:hover,
+  .bace-secondary-navbar-nav > li > a:hover {
+    background: #c8a551; } }
 
 @media (max-width: 960px) {
   .custom-logo {
@@ -520,9 +551,18 @@ object {
   .custom-logo-link {
     padding-top: 10px;
     padding-bottom: 10px; }
-  .navbar {
+  .bace-primary-navbar,
+  .bace-secondary-navbar {
     margin-bottom: 0;
     min-height: auto; }
-  .navbar-nav > li > a {
+  .bace-primary-navbar-nav > li > a {
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0; }
+  .bace-site-header-wrapper {
+    text-align: center; }
+  .bace-secondary-navbar-nav .current-menu-item a,
+  .bace-secondary-navbar-nav > li > a:hover,
+  .bace-secondary-navbar-nav > li > a:hover {
+    background: transparent; }
+  .bace-secondary-navbar {
+    text-align: center; } }
