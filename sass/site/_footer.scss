@@ -1,0 +1,14 @@
+body {
+	font-size: rem-calc(13);
+}
+
+.site-footer {
+	background: $color__footer;
+}
+
+.site-info {
+	font-size: rem-calc(11);
+	margin-top: rem-calc(8);
+	margin-bottom: rem-calc(8);
+	color: $color__text-light;
+}

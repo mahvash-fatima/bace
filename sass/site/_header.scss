@@ -1,9 +1,9 @@
-.nav-link {
-	padding: 5px;
+.site-header {
+	background: $color__header;
 }
 
-.navbar {
-	padding-top: 10px;
+.nav-link {
+	padding: rem-calc(5)
 }
 
 .navbar-nav>li:last-child a {
@@ -12,6 +12,6 @@
 }
 
 .navbar-nav {
+	font-size: rem-calc(12);
 	text-transform: uppercase;
-	font-size: 13px;
 }

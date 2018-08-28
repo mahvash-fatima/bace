@@ -12,20 +12,10 @@
 ?>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer container">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bace' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'bace' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bace' ), 'bace', '<a href="https://profiles.wordpress.org/mahvash-fatima">Mahvash Fatima</a>' );
-				?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="site-footer">
+		<div class="container">
+			<p class="site-info">Disclaimer: Sit arcu nec cras elit? Vut sagittis magna nisi vel integer arcu? Dis pulvinar scelerisque pulvinar rhoncus integer, integer in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquam porttitor. Dis pulvinar scelerisque pulvinar rhoncus integer, integer in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquam porttitor.</p>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

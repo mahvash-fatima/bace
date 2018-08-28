@@ -1084,7 +1084,7 @@ th {
   box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 16px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
@@ -3994,7 +3994,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #ffffff;
 }
 .nav > li.disabled > a {
   color: #777777;
@@ -4171,7 +4170,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 30px;
+  min-height: auto;
   margin-bottom: 10px;
   border: 1px solid transparent;
 }

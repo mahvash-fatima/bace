@@ -1,5 +1,10 @@
-@media (min-width: 767px) {
+@media (min-width: 768px) {
 	.site-header {
+		padding-top: rem-calc(20);
+		padding-bottom: rem-calc(20);
+	}
+
+	.bace-site-header-wrapper {
 		display: flex;
 		flex-direction: column-reverse;
 	}
@@ -20,12 +25,19 @@
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	.custom-logo {
 		max-width: 100px;
 	}
 	.custom-logo-link {
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+	.navbar {
+		margin-bottom: 0;
+	}
+	.navbar-nav>li>a {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
