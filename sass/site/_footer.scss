@@ -2,13 +2,14 @@ body {
 	font-size: rem-calc(13);
 }
 
-.site-footer {
+.bace-site-footer-disclaimer {
+	font-size: rem-calc(11);
+	padding-top: rem-calc(8);
+	padding-bottom: rem-calc(8);
+	color: $color__text-light;
 	background: $color__footer;
 }
 
-.site-info {
-	font-size: rem-calc(11);
-	margin-top: rem-calc(8);
-	margin-bottom: rem-calc(8);
-	color: $color__text-light;
+.bace-site-footer-disclaimer-para {
+	margin-bottom: 0;
 }
