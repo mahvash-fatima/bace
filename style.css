@@ -427,6 +427,9 @@ a {
 body {
   font-size: 0.8125rem; }
 
+.site-footer a {
+  color: #404040; }
+
 .bace-site-footer-disclaimer {
   font-size: 0.6875rem;
   padding-top: 0.5rem;
@@ -436,6 +439,31 @@ body {
 
 .bace-site-footer-disclaimer-para {
   margin-bottom: 0; }
+
+.bace-footer-content {
+  background: #e6c36e; }
+
+.bace-site-footer-widgets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.bace-site-footer-widgets li {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem; }
+  .bace-site-footer-widgets li:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f101";
+    margin-right: 0.3125rem; }
+
+.bace-footer-widget-title {
+  padding-bottom: 0.625rem;
+  margin-bottom: 0.9375rem;
+  border-bottom: 1px solid #9c793c; }
+
+.bace-site-footer-logo {
+  margin-bottom: 1.875rem; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

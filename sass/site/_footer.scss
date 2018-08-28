@@ -2,6 +2,12 @@ body {
 	font-size: rem-calc(13);
 }
 
+.site-footer {
+	a {
+		color: $color__text-main;
+	}
+}
+
 .bace-site-footer-disclaimer {
 	font-size: rem-calc(11);
 	padding-top: rem-calc(8);
@@ -12,4 +18,34 @@ body {
 
 .bace-site-footer-disclaimer-para {
 	margin-bottom: 0;
+}
+
+.bace-footer-content {
+	background: $color__theme-primary;
+}
+
+.bace-site-footer-widgets {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin-top: rem-calc(10);
+		margin-bottom: rem-calc(10);
+		&:before {
+			font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f101";
+			margin-right: rem-calc(5);
+		}
+	}
+}
+
+.bace-footer-widget-title {
+	padding-bottom: rem-calc(10);
+	margin-bottom: rem-calc(15);
+	border-bottom: 1px solid $color__border-footer;
+}
+
+.bace-site-footer-logo {
+	margin-bottom: rem-calc(30);
 }

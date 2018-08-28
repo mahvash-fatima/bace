@@ -121,7 +121,7 @@ function bace_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'bace' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s col-md-4">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="bace-footer-widget-title widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
