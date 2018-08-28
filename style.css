@@ -40,6 +40,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Fonts
 # Media Query
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -369,8 +370,13 @@ a {
   margin-left: 0;
   padding-left: 0; }
 
-.bace-banner__slider-nav img {
-  border: 6px solid #d5ccb4; }
+.bace-banner__slider-nav {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid #c5c5c5;
+  border-bottom: 1px solid #c5c5c5; }
+  .bace-banner__slider-nav img {
+    border: 6px solid #d5ccb4; }
 
 .bace-banner__slider-image {
   padding: 0.125rem; }
@@ -391,6 +397,28 @@ a {
 
 .slick-current img {
   border-color: #9a844a; }
+
+.slider-nav .slick-list {
+  margin-left: 3.125rem;
+  margin-right: 3.125rem; }
+
+.slick-prev {
+  left: 0; }
+
+.slick-next {
+  right: 0; }
+
+.slick-prev,
+.slick-next {
+  width: 2.8125rem;
+  height: 100%; }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 2.8125rem;
+    color: #d5ccb4; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0.625rem; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -484,11 +512,6 @@ body {
 .bace-site-footer-widgets li {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem; }
-  .bace-site-footer-widgets li:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f101";
-    margin-right: 0.3125rem; }
 
 .bace-footer-widget-title {
   padding-bottom: 0.625rem;
@@ -578,6 +601,25 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+.bace-site-footer-widgets li:before,
+.slick-prev:before,
+.slick-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; }
+
+.bace-site-footer-widgets li:before {
+  content: "\f101";
+  margin-right: 0.3125rem; }
+
+.slick-prev:before {
+  content: "\f053"; }
+
+.slick-next:before {
+  content: "\f054"; }
 
 /*--------------------------------------------------------------
 # Media Query

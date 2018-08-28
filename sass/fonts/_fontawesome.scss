@@ -1,0 +1,19 @@
+.bace-site-footer-widgets li:before,
+.slick-prev:before,
+.slick-next:before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+.bace-site-footer-widgets li:before {
+	content: "\f101";
+	margin-right: rem-calc(5);
+}
+
+.slick-prev:before {
+	content: "\f053";
+}
+
+.slick-next:before {
+	content: "\f054";
+}

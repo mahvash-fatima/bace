@@ -5,7 +5,7 @@
 		<ul class="bace-banner__slider bace-banner__slider-for slider-for">
 			<?php
 			foreach ( $slides as $slide ) {
-				echo "<li><div class='bace-banner__slider-image'><img src=" . get_template_directory_uri() . "/img/" . $slide . "></div></li>";
+				echo "<li><img src=" . get_template_directory_uri() . "/img/" . $slide . "></li>";
 			}
 			?>
 		</ul>

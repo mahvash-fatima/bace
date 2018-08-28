@@ -37,10 +37,6 @@ body {
 	li {
 		margin-top: rem-calc(10);
 		margin-bottom: rem-calc(10);
-		&:before {
-			font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f101";
-			margin-right: rem-calc(5);
-		}
 	}
 }
 

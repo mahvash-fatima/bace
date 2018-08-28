@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Fonts
 # Media Query
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
@@ -105,6 +106,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@import "fonts/fontawesome";
 
 /*--------------------------------------------------------------
 # Media Query
