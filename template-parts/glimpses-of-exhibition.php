@@ -75,6 +75,10 @@
 
 			$post_categories = wp_get_post_categories( get_the_ID() );
 
+			$category_obj = get_term(get_the_ID());
+			print_r($category_obj);
+
+
 			foreach( $post_categories as $c ){
 				$category_link = get_category_link( $c );
 				$cat = get_category( $c );
