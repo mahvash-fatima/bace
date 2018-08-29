@@ -1,19 +1,61 @@
 .bace-banner {
+	background: #eeeaeb;
+	max-width: rem-calc(950);
+	margin: 0 auto;
+
 	&__slider {
 		margin-left: 0;
 		padding-left: 0;
 	}
+
 	&__slider-nav {
 		padding-top: rem-calc(20);
 		padding-bottom: rem-calc(20);
 		border-top: 1px solid $color__border;
 		border-bottom: 1px solid $color__border;
+		margin-top: rem-calc(15);
 		img {
 			border: 6px solid $color__theme-tertiary;
 		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: rem-calc(-15);
+			left: 0;
+			height: rem-calc(5);
+			width: 100%;
+			background: #dcd7d3;
+		}
 	}
+
+	&__slider-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	&__slider-image {
 		padding: rem-calc(2);
+	}
+
+	&__content {
+		line-height: 1.5;
+	}
+
+	&__read-more {
+		&:visited {
+			color: $color__theme-secondary;
+		}
+	}
+
+	&__content-image {
+		float: left;
+		margin-right: rem-calc(10);
+	}
+
+	&__content-title {
+		margin-bottom: rem-calc(20);
+		font-size: rem-calc(20);
+		color: $color__theme-secondary;
 	}
 }
 
@@ -66,5 +108,5 @@
 }
 
 .slick-dotted.slick-slider {
-	margin-bottom: rem-calc(10);
+	margin-bottom: rem-calc(1);
 }

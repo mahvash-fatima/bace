@@ -366,20 +366,45 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.bace-banner__slider {
-  margin-left: 0;
-  padding-left: 0; }
-
-.bace-banner__slider-nav {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  border-top: 1px solid #c5c5c5;
-  border-bottom: 1px solid #c5c5c5; }
-  .bace-banner__slider-nav img {
-    border: 6px solid #d5ccb4; }
-
-.bace-banner__slider-image {
-  padding: 0.125rem; }
+.bace-banner {
+  background: #eeeaeb;
+  max-width: 59.375rem;
+  margin: 0 auto; }
+  .bace-banner__slider {
+    margin-left: 0;
+    padding-left: 0; }
+  .bace-banner__slider-nav {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+    margin-top: 0.9375rem; }
+    .bace-banner__slider-nav img {
+      border: 6px solid #d5ccb4; }
+    .bace-banner__slider-nav:before {
+      content: "";
+      position: absolute;
+      top: -0.9375rem;
+      left: 0;
+      height: 0.3125rem;
+      width: 100%;
+      background: #dcd7d3; }
+  .bace-banner__slider-container {
+    padding-left: 0;
+    padding-right: 0; }
+  .bace-banner__slider-image {
+    padding: 0.125rem; }
+  .bace-banner__content {
+    line-height: 1.5; }
+  .bace-banner__read-more:visited {
+    color: #b9a071; }
+  .bace-banner__content-image {
+    float: left;
+    margin-right: 0.625rem; }
+  .bace-banner__content-title {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    color: #b9a071; }
 
 .slick-dots {
   bottom: 0;
@@ -418,7 +443,7 @@ a {
     color: #d5ccb4; }
 
 .slick-dotted.slick-slider {
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.0625rem; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -649,18 +674,20 @@ object {
   .bace-banner__slider-container {
     width: 71%; }
   .bace-banner__content {
-    width: 29%; } }
+    width: 29%; }
+  .bace-banner__content {
+    letter-spacing: 0.6px; } }
 
 @media (max-width: 992px) {
   .custom-logo {
-    max-width: 150px; } }
+    max-width: 9.375rem; } }
 
 @media (max-width: 768px) {
   .custom-logo {
-    max-width: 100px; }
+    max-width: 6.25rem; }
   .custom-logo-link {
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem; }
   .bace-primary-navbar,
   .bace-secondary-navbar {
     margin-bottom: 0;

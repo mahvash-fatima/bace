@@ -40,21 +40,26 @@
 			width: 29%;
 		}
 	}
+	.bace-banner {
+		&__content {
+			letter-spacing: 0.6px;
+		}
+	}
 }
 
 @media (max-width: 992px) {
 	.custom-logo {
-		max-width: 150px;
+		max-width: rem-calc(150);
 	}
 }
 
 @media (max-width: 768px) {
 	.custom-logo {
-		max-width: 100px;
+		max-width: rem-calc(100);
 	}
 	.custom-logo-link {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: rem-calc(10);
+		padding-bottom: rem-calc(10);
 	}
 	.bace-primary-navbar,
 	.bace-secondary-navbar {
