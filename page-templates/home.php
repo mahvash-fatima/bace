@@ -11,6 +11,8 @@ get_header();
 
 get_template_part('template-parts/banner');
 
+bace_banner();
+
 get_template_part( 'template-parts/home-section-1' );
 
 get_footer();
