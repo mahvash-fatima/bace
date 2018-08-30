@@ -461,7 +461,8 @@ a {
 .slick-current img {
   border-color: #9a844a; }
 
-.slick-list {
+.slider-nav .slick-list,
+.bace-our-partners__slider .slick-list {
   margin-left: 3.125rem;
   margin-right: 3.125rem; }
 
