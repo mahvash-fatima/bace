@@ -39,6 +39,7 @@
 
 	&__content {
 		line-height: 1.5;
+		padding-bottom: rem-calc(15);
 	}
 
 	&__read-more {
@@ -60,11 +61,42 @@
 	&__slide-content {
 		display: none;
 	}
+	&__more-link,
+	&__more-link:hover,
+	&__more-link:visited {
+		color: $color__theme-secondary;
+	}
 }
 
 .slick-dots {
+	padding: rem-calc(15);
 	bottom: 0;
 	text-align: right;
+	li {
+		button {
+			box-shadow: 0 0 0 2px $color__theme-primary;
+			border-radius: 100%;
+			height: rem-calc(15);
+			width: rem-calc(15);
+			padding: 0;
+			&:before {
+				font-size: rem-calc(17);
+				color: $color__theme-secondary;
+				opacity: 1;
+				height: rem-calc(15);
+				width: rem-calc(15);
+				line-height: rem-calc(17);
+			}
+		}
+	}
+}
+
+.slick-dots li.slick-active button {
+	box-shadow: 0 0 0 2px $color__white;
+}
+
+.slick-dots li.slick-active button:before {
+	color: $color__theme-secondary;
 }
 
 .slick-slide {

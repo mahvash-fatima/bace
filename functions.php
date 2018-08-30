@@ -127,16 +127,20 @@ function bace_widgets_init() {
 }
 add_action( 'widgets_init', 'bace_widgets_init' );
 
-function bace_excerpt_more($more) {
-	return '';
-}
-add_filter('excerpt_more', 'bace_excerpt_more', 21 );
+if ( ! function_exists( 'bace_read_more_link' ) ) :
 
-function bace_read_more_link( $excerpt ){
-	$post = get_post();
-	$excerpt .= '<a href="'. get_permalink($post->ID) . '">' . __( 'Read More' , 'bace' ) . '</a>.';
-	return $excerpt;
-}
+	function bace_excerpt_more($more) {
+		return '';
+	}
+	add_filter('excerpt_more', 'bace_excerpt_more', 21 );
+
+	function bace_read_more_link( $excerpt ){
+		$post = get_post();
+		$excerpt .= '<a href="'. get_permalink($post->ID) . '" class="bace-banner__more-link">' . __( 'Read More' , 'bace' ) . '</a>.';
+		return $excerpt;
+	}
+
+endif;
 add_filter( 'the_excerpt', 'bace_read_more_link', 21 );
 
 /**
@@ -165,7 +169,13 @@ function bace_scripts() {
 
 	wp_enqueue_script( 'bace-slick-script', get_template_directory_uri() . '/js/vendor/slick.min.js', array(), '1.8.1', true );
 
-	wp_enqueue_script( 'bace-main-script', get_template_directory_uri() . '/js/main.js', array(), '1.8.1', true );
+	wp_enqueue_script( 'bace-jquery-script', get_template_directory_uri() . '/js/jquery.js', array(), '1.8.1', true );
+
+	wp_enqueue_script( 'bace-javascript-script', get_template_directory_uri() . '/js/javascript.js', array(), '1.8.1', true );
+
+	wp_localize_script( 'bace-javascript-script', 'baceTimestamp', array(
+		'ajaxurl' => get_template_directory_uri() . '/lib/timestamp-data.php',
+	) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -202,3 +212,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+require_once get_template_directory() . '/lib/timestamp-widget.php';
