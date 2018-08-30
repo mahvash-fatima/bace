@@ -127,14 +127,14 @@ function bace_widgets_init() {
 }
 add_action( 'widgets_init', 'bace_widgets_init' );
 
-function new_excerpt_more($more) {
+function bace_excerpt_more($more) {
 	return '';
 }
-add_filter('excerpt_more', 'new_excerpt_more', 21 );
+add_filter('excerpt_more', 'bace_excerpt_more', 21 );
 
 function bace_read_more_link( $excerpt ){
 	$post = get_post();
-	$excerpt .= '<a href="'. get_permalink($post->ID) . '">Read More</a>.';
+	$excerpt .= '<a href="'. get_permalink($post->ID) . '">' . __( 'Read More' , 'bace' ) . '</a>.';
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'bace_read_more_link', 21 );
