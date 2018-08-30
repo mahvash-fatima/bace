@@ -2,15 +2,15 @@
 /**
  * Adds Sidebar_Widget widget.
  */
-class Bace_Timestamp_Widget extends WP_Widget {
+class Bace_Recent_Posts_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'bace_timestamp', // Base ID
-			__( 'Bace Timestamp Widget', 'bace' ), // Name
-			apply_filters('bace_timestamp_description', array( 'description' => __( 'Shows Widget for Timestamp', 'bace' ), ) ) // Args
+			'bace_recent_posts', // Base ID
+			__( 'Bace Recent Posts Widget', 'bace' ), // Name
+			apply_filters('bace_recent_posts_description', array( 'description' => __( 'Shows Widget for Recent Posts', 'bace' ), ) ) // Args
 		);
 	}
 	/**
@@ -24,15 +24,10 @@ class Bace_Timestamp_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args[ 'before_widget' ];
 		if ( ! empty( $instance[ 'title' ] ) ) {
-			echo $args[ 'before_title' ] . apply_filters( 'bace_timestamp_widget_title', $instance[ 'title' ] ). $args[ 'after_title' ];
+			echo $args[ 'before_title' ] . apply_filters( 'bace_recent_posts_widget_title', $instance[ 'title' ] ). $args[ 'after_title' ];
 		}
 
-		get_template_part( 'timestamp' );
-		date_default_timezone_set('Asia/Bangkok');
-		$date = date( 'l, j F' );
-
-		echo '<span class="bace-timestamp__date">' . $date . '</span>';
-		echo '<h4 id="bace-timestamp__time" class="bace-timestamp__time">' . date( 'H:i:s' ) . '</h4>';
+		bace_recent_posts();
 
 		echo $args['after_widget'];
 	}
@@ -45,7 +40,7 @@ class Bace_Timestamp_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Date and Time', 'bace' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'News', 'bace' );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'bace' ); ?></label>
@@ -71,10 +66,10 @@ class Bace_Timestamp_Widget extends WP_Widget {
 	}
 
 }
-// register timestamp widget in sidebar
-if( ! function_exists( 'bace_register_timestamp_widget' ) ) :
-	function bace_register_timestamp_widget() {
-		register_widget( 'Bace_Timestamp_Widget' );
+// register recent posts widget in sidebar
+if( ! function_exists( 'bace_register_recent_posts_widget' ) ) :
+	function bace_register_recent_posts_widget() {
+		register_widget( 'Bace_Recent_Posts_Widget' );
 	}
-endif;//bace_register_timestamp_widget
-add_action( 'widgets_init', 'bace_register_timestamp_widget' );
+endif;//bace_register_recent_posts_widget
+add_action( 'widgets_init', 'bace_register_recent_posts_widget' );

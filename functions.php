@@ -216,6 +216,9 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 // Register Custom Timestamp Widget
 require_once get_template_directory() . '/lib/timestamp-widget.php';
 
+// Register Custom Recent Posts Widget
+require_once get_template_directory() . '/lib/recent-posts-widget.php';
+
 // Register Custom Functions
 require_once get_template_directory() . '/lib/custom-functions.php';
 
