@@ -25,3 +25,31 @@
 		font-weight: 300;
 	}
 }
+
+.bace-recent-post {
+	display: flex;
+	&__thumbnail {
+		width: 30%;
+		margin-right: rem-calc(10);
+		img {
+			border: 5px solid $color__theme-tertiary;
+		}
+	}
+	&__content {
+		width: 70%;
+	}
+	&__title {
+		font-size: rem-calc(13);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		max-height: rem-calc(200);
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		margin-top: rem-calc(10);
+		margin-bottom: 0;
+	}
+	&__date {
+		font-size: rem-calc(11);
+	}
+}

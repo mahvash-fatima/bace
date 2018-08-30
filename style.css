@@ -353,6 +353,28 @@ a {
   font-size: 3.75rem;
   font-weight: 300; }
 
+.bace-recent-post {
+  display: flex; }
+  .bace-recent-post__thumbnail {
+    width: 30%;
+    margin-right: 0.625rem; }
+    .bace-recent-post__thumbnail img {
+      border: 5px solid #d5ccb4; }
+  .bace-recent-post__content {
+    width: 70%; }
+  .bace-recent-post__title {
+    font-size: 0.8125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 12.5rem;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-top: 0.625rem;
+    margin-bottom: 0; }
+  .bace-recent-post__date {
+    font-size: 0.6875rem; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

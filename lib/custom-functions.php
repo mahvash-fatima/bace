@@ -36,8 +36,8 @@
 
 					<?php } ?>
 					<div class="bace-recent-post__content">
-						<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-						<span><?php echo get_the_date(); ?></span>
+						<h3 class="bace-recent-post__title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+						<span class="bace-recent-post__date"><?php echo get_the_date(); ?></span>
 					</div>
 				</article>
 
