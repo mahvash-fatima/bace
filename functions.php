@@ -169,7 +169,7 @@ function bace_scripts() {
 
 	wp_enqueue_script( 'bace-slick-script', get_template_directory_uri() . '/js/vendor/slick.min.js', array(), '1.8.1', true );
 
-	wp_enqueue_script( 'bace-jquery-script', get_template_directory_uri() . '/js/jquery.js', array(), '1.8.1', true );
+	wp_enqueue_script( 'bace-jquery-main-script', get_template_directory_uri() . '/js/jquery-main.js', array(), '1.8.1', true );
 
 	wp_enqueue_script( 'bace-javascript-script', get_template_directory_uri() . '/js/javascript.js', array(), '1.8.1', true );
 
@@ -213,4 +213,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
+// Register Custom Timestamp Widget
 require_once get_template_directory() . '/lib/timestamp-widget.php';
