@@ -30,6 +30,24 @@ class Bace_Customizer {
 			'priority'       => 30,
 		) );
 
+		$wp_customize->add_section( 'bace_slider_title_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Slider Title' , 'bace' ),
+			'panel'       => 'bace_slider_pannel',
+		) );
+		$wp_customize->add_setting( 'bace_slider_title_setting', array(
+			'default'           => __( 'Our Partners', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_slider_title_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_slider_title_section',
+			'label'       => __( 'Slider Title', 'bace' ),
+		) ) );
+
 		$default_slides = get_theme_mod( 'bace_slides', bace_our_partners_default_slides() );
 
 		for ( $i = 0; $i <= apply_filters( 'bace_increase_slides', 9 ); $i++ ) {

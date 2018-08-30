@@ -7,16 +7,20 @@ $slides = get_theme_mod( 'bace_slides', bace_our_partners_default_slides() );
 
 ?>
 
-<section id="bace-our-partners__slider" class="bace-our-partners__slider">
+<section class="bace-our-partners__section">
+	<h2 class="bace-our-partners__title"><?php echo get_theme_mod('bace_slider_title_setting'); ?></h2>
 
-	<?php if( is_array( $slides ) ) : foreach ( $slides as $slide ) : ?>
+	<div id="bace-our-partners__slider" class="bace-our-partners__slider">
 
-		<?php $slide_image = isset( $slide['image'] ) ? $slide['image'] : false;
+		<?php if( is_array( $slides ) ) : foreach ( $slides as $slide ) : ?>
 
-		if( ! trim( $slide_image ) ) continue; ?>
+			<?php $slide_image = isset( $slide['image'] ) ? $slide['image'] : false;
 
-		<img src='<?php echo esc_url( $slide_image ); ?>' alt='image'>
+			if( ! trim( $slide_image ) ) continue; ?>
 
-	<?php endforeach; endif; ?>
+			<img src='<?php echo esc_url( $slide_image ); ?>' alt='image'>
 
+		<?php endforeach; endif; ?>
+
+	</div>
 </section>

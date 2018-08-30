@@ -39,4 +39,11 @@
 			}
 		} );
 	} );
+
+	wp.customize( 'bace_slider_title_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-our-partners__title' ).text( to );
+		} );
+	} );
+
 } )( jQuery );
