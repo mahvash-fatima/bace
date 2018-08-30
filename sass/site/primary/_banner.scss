@@ -119,7 +119,7 @@
 	}
 }
 
-.slider-nav .slick-list {
+.slick-list {
 	margin-left: rem-calc(50);
 	margin-right: rem-calc(50);
 }
@@ -136,6 +136,7 @@
 .slick-next {
 	width: rem-calc(45);
 	height: 100%;
+	z-index: 1;
 	&:before {
 		font-size: rem-calc(45);
 		color: $color__theme-tertiary;
