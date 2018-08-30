@@ -15,6 +15,21 @@ A starter theme called Bace.
 
 Bace is a responsive multipurpose theme.
 
+Font Awesome - https://fontawesome.com/
+License: Font Awesome is licensed under the GPL license.
+Contributing author: Rob Madole (https://github.com/robmadole)
+Copyright: Copyright 2018 - Fonticons
+
+Bootstrap: https://getbootstrap.com/
+License: Bootstrap is licensed under the MIT license.
+Contributing author: Mark Otto (https://github.com/mdo)
+Copyright: Copyright 2011-2018 The Bootstrap Authors
+
+Slick: https://getbootstrap.com/
+License: Slick is licensed under the MIT license.
+Contributing author: Ken Wheeler (https://github.com/kenwheeler)
+Copyright: Copyright (c) 2017 Ken Wheeler
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
