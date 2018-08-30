@@ -57,6 +57,9 @@
 		font-size: rem-calc(20);
 		color: $color__theme-secondary;
 	}
+	&__slide-content {
+		display: none;
+	}
 }
 
 .slick-dots {

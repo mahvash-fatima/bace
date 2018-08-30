@@ -8,7 +8,9 @@
 		},
 
 		slider: function (  ) {
-			$('.bace-banner__slider-for').slick({
+			var sliderFor = $('.bace-banner__slider-for');
+
+			sliderFor.slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				arrows: false,
@@ -37,6 +39,18 @@
 						}
 					},
 				]
+			});
+
+			// var a = slideForCurrentContent.html();
+			// slideForSidebarContent.html(a);
+
+			sliderFor.on('afterChange', function(event, slick, currentSlide, nextSlide){
+				var sliderFor = $('.bace-banner__slider-for'),
+					slideForCurrentContent = $('.bace-banner__slider-for .slick-current .bace-banner__slide-content'),
+					slideForSidebarContent = $('#bace-banner__content'),
+					a = slideForCurrentContent.html();
+
+				slideForSidebarContent.html(a);
 			});
 		}
 	}
