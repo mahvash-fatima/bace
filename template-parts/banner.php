@@ -45,7 +45,6 @@
 				?>
 				<div>
 					<h2 class="bace-banner__content-title"><?php the_title(); ?></h2>
-					<?php the_post_thumbnail(); ?>
 					<?php the_excerpt(); ?>
 				</div>
 
