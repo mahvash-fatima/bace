@@ -20,3 +20,14 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.bace-our-partners {
+	&__section {
+		border-bottom: 1px solid $color__border;
+		margin-bottom: rem-calc(20);
+	}
+	&__title,
+	&__slider {
+		margin-bottom: rem-calc(10);
+	}
+}

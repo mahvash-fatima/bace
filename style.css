@@ -339,7 +339,8 @@ a {
   .widget select {
     max-width: 100%; }
 
-.widget-title {
+.widget-title,
+.bace-our-partners__title {
   background: #f4eede;
   padding: 6px 10px;
   border-left: 8px solid #e6c36e;
@@ -375,6 +376,13 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.bace-our-partners__section {
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 1.25rem; }
+
+.bace-our-partners__title, .bace-our-partners__slider {
+  margin-bottom: 0.625rem; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
