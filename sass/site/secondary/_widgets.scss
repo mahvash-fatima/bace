@@ -6,3 +6,21 @@
 		max-width: 100%;
 	}
 }
+
+.widget-title {
+	background: $color__background-title;
+	padding: 6px 10px;
+	border-left: 8px solid $color__theme-primary;
+	margin-bottom: rem-calc(20);
+}
+
+//Timestamp Widget
+.bace-timestamp {
+	&__date {
+		font-size: rem-calc(16);
+	}
+	&__time {
+		font-size: rem-calc(60);
+		font-weight: 300;
+	}
+}

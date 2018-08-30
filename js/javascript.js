@@ -7,7 +7,7 @@ function timestamp() {
 	$.ajax({
 		url: ajaxUrl,
 		success: function(data) {
-			$('#bace-timestamp__date').html(data);
+			$('#bace-timestamp__time').html(data);
 		},
 	});
 }

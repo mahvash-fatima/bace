@@ -339,6 +339,19 @@ a {
   .widget select {
     max-width: 100%; }
 
+.widget-title {
+  background: #f4eede;
+  padding: 6px 10px;
+  border-left: 8px solid #e6c36e;
+  margin-bottom: 1.25rem; }
+
+.bace-timestamp__date {
+  font-size: 1rem; }
+
+.bace-timestamp__time {
+  font-size: 3.75rem;
+  font-weight: 300; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

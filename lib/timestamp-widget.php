@@ -31,8 +31,8 @@ class Bace_Timestamp_Widget extends WP_Widget {
 		date_default_timezone_set('Asia/Bangkok');
 		$date = date( 'l, j F' );
 
-		echo '<span>' . $date . '</span>';
-		echo '<h4 id="bace-timestamp__date">' . date( 'H:i:s' ) . '</h4>';
+		echo '<span class="bace-timestamp__date">' . $date . '</span>';
+		echo '<h4 id="bace-timestamp__time" class="bace-timestamp__time">' . date( 'H:i:s' ) . '</h4>';
 
 		echo $args['after_widget'];
 	}
