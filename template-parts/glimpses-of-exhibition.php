@@ -1,59 +1,4 @@
-<div class="row">
-	<h2>Glimpses of Exhibition</h2>
-	<div class="row">
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/golf.jpg" alt="Golf">
-				<h3>Golf</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/basketball.jpg" alt="BasketBall">
-				<h3>BasketBall</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/tennis.jpg" alt="Tennis">
-				<h3>Tennis</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/football.jpg" alt="FootBall">
-				<h3>FootBall</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/football.jpg" alt="FootBall">
-				<h3>FootBall</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/tennis.jpg" alt="Tennis">
-				<h3>Tennis</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/golf.jpg" alt="Golf">
-				<h3>Golf</h3>
-			</a>
-		</div>
-		<div class="col-md-3">
-			<a href="">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/basketball.jpg" alt="BasketBall">
-				<h3>BasketBall</h3>
-			</a>
-		</div>
-	</div>
-</div>
-
 <?php
-
 	$args = array(
 		'post_status'=>'publish',
 		'post_type'=>'post',
@@ -76,7 +21,7 @@
 			$post_categories = wp_get_post_categories( get_the_ID() );
 
 			$category_obj = get_term(get_the_ID());
-			print_r($category_obj);
+//			print_r($category_obj);
 
 
 			foreach( $post_categories as $c ){

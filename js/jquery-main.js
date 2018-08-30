@@ -4,10 +4,11 @@
 
 	window.Base = {
 		init: function () {
-			this.slider();
+			this.bannerSlider();
+			this.ourPartnersSlider();
 		},
 
-		slider: function (  ) {
+		bannerSlider: function (  ) {
 			var sliderFor = $('.bace-banner__slider-for');
 
 			sliderFor.slick({
@@ -42,12 +43,34 @@
 				]
 			});
 
-			sliderFor.on('afterChange', function(event, slick, currentSlide, nextSlide){
+			sliderFor.on('beforeChange', function(event, slick, currentSlide, nextSlide){
 				var sliderFor = $('.bace-banner__slider-for'),
 					slideForCurrentContent = $('.bace-banner__slider-for .slick-current .bace-banner__slide-content'),
 					slideForSidebarContent = $('#bace-banner__content'),
 					a = slideForCurrentContent.html();
 				slideForSidebarContent.html(a);
+			});
+		},
+
+		ourPartnersSlider: function (  ) {
+			$('#bace-our-partners__slider').slick({
+				infinite: true,
+				slidesToShow: 5,
+				slidesToScroll: 5,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 2,
+						}
+					},
+				]
 			});
 		}
 	}

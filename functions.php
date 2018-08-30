@@ -157,11 +157,11 @@ function bace_scripts() {
 
 	wp_enqueue_style( 'bace-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'bace-jquery-script', get_template_directory_uri() . '/js/vendor/jquery-3.3.1.min.js', array(), '3.3.1', true );
+
 	wp_enqueue_script( 'bace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bace-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'bace-jquery-script', get_template_directory_uri() . '/js/vendor/jquery-3.3.1.slim.min.js', array(), '3.3.1', true );
 
 	wp_enqueue_script( 'bace-bootstrap-script', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array(), '4.1.3', true );
 
@@ -215,3 +215,10 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 // Register Custom Timestamp Widget
 require_once get_template_directory() . '/lib/timestamp-widget.php';
+
+// Register Custom Functions
+require_once get_template_directory() . '/lib/custom-functions.php';
+
+//echo "<pre>";
+//print_r(get_theme_mods());
+//echo "</pre>";

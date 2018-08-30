@@ -1,55 +1,74 @@
 <?php
 /**
- * Bace Theme Customizer
- *
- * @package Bace
+ * Contains options for Customizer Admin
+ * @package bace
+ * @since bace 1.0
  */
+class Bace_Customizer {
+	public function __construct()
+	{
+		// Setup the Theme Customizer settings and controls...
+		add_action( 'customize_register' , array( $this , 'register' ) );
+		// Enqueue live preview javascript in Theme Customizer admin screen
+		add_action( 'customize_preview_init' , array( $this , 'live_preview' ) );
+	}
+	/**
+	 * Add postMessage support for site title and description for the Customizer.
+	 * @param WP_Customize_Manager $wp_customize Customizer object.
+	 */
+	public static function register ( $wp_customize ) {
+		do_action('bace_customize_starts' , $wp_customize );
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function bace_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		/*==============================
+				  SLIDER
+		===============================*/
+		global $bace_theme;
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
-			'render_callback' => 'bace_customize_partial_blogname',
+		$wp_customize->add_panel( 'bace_slider_pannel', array(
+			'capability'     => 'edit_theme_options',
+			'title'          => __( 'Slider Options', 'bace' ),
+			'priority'       => 30,
 		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => 'bace_customize_partial_blogdescription',
-		) );
+
+		$default_slides = get_theme_mod( 'bace_slides', bace_our_partners_default_slides() );
+
+		for ( $i = 0; $i <= apply_filters( 'bace_increase_slides', 9 ); $i++ ) {
+			$wp_customize->add_section( 'bace_slider_section_' . $i, array(
+				'capability'  => 'edit_theme_options',
+				'title'       => sprintf( __( 'Slide %s' , 'bace' ), $i+1 ),
+				'description' => __( 'Note: All default slide values will be discarded, the moment you make any changes to the slide.', 'bace' ),
+				'panel'       => 'bace_slider_pannel',
+			) );
+			$wp_customize->add_setting( 'bace_slides['.$i.'][image]', array(
+				'default'           => isset( $default_slides[$i]['image'] ) ? esc_url($default_slides[$i]['image']) : '',
+				'sanitize_callback' => 'esc_url_raw',
+				'capability'        => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_slides['.$i.'][image]', array(
+				'section'     => 'bace_slider_section_' . $i,
+				'label'       => __( 'Image', 'bace' ),
+				'settings'    => 'bace_slides['.$i.'][image]',
+			) ) );
+		}
+		// We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
+		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+		do_action('bace_customize_ends' , $wp_customize );
+	}
+	/**
+	 * This outputs the javascript needed to automate the live settings preview.
+	 * Also keep in mind that this function isn't necessary unless your settings
+	 * are using 'transport'=>'postMessage' instead of the default 'transport'
+	 * @since bace 1.0
+	 */
+	public static function live_preview() {
+		wp_enqueue_script(
+			'bace-themecustomizer', // Give the script a unique ID
+			get_template_directory_uri() . '/js/customizer.js', // Define the path to the JS file
+			array(  'jquery', 'customize-preview' ), // Define dependencies
+			'1.0', // Define a version (optional)
+			true // Specify whether to put in footer (leave this true)
+		);
 	}
 }
-add_action( 'customize_register', 'bace_customize_register' );
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function bace_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function bace_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function bace_customize_preview_js() {
-	wp_enqueue_script( 'bace-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
-}
-add_action( 'customize_preview_init', 'bace_customize_preview_js' );
+new Bace_Customizer();

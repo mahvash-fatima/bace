@@ -4,3 +4,4 @@
 	</div>
 	<?php get_sidebar(); ?>
 </section>
+<?php get_template_part( 'template-parts/our-partners' ) ?>

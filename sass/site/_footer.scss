@@ -41,6 +41,8 @@ body {
 }
 
 .bace-footer-widget-title {
+	background: transparent;
+	border-left: 0;
 	padding-bottom: rem-calc(10);
 	margin-bottom: rem-calc(15);
 	border-bottom: 1px solid $color__border-footer;
