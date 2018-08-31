@@ -72,6 +72,16 @@
 	}
 }
 
+.bace-recent-post {
+	&__loadmore {
+		color: $color__link;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 // Footer Widgets
 
 .bace-footer-widget-title {

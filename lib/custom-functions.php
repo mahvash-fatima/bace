@@ -35,8 +35,6 @@
 				'max_page' => $wp_query->max_num_pages
 			) );
 
-			print_r($wp_query->query_vars);
-
 			wp_enqueue_script( 'my_loadmore' );
 		}
 
@@ -48,7 +46,7 @@
 
 			// prepare our arguments for the query
 			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-			$recent_posts = new WP_Query( 'cat=1&paged=' . $paged );
+			$recent_posts = new WP_Query( 'posts_per_page=7&paged=' . $paged );
 
 			$args = json_decode( stripslashes( $recent_posts ), true );
 			$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
@@ -119,27 +117,25 @@
 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-				$recent_posts = new WP_Query( 'cat=1&paged=' . $paged );
+				$recent_posts = new WP_Query( 'posts_per_page=7&paged=' . $paged );
 
-				while( $recent_posts->have_posts() )
-				{
-					$recent_posts->the_post() ;
+				while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 
-					if( get_the_ID() === $first_post_id ) {
+				if( get_the_ID() === $first_post_id ) {
 						continue;
 					} ?>
 
 					<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 
-				<?php } ?>
+				<?php endwhile; ?>
 			</ul>
-			<div class="nav-previous alignleft"><?php echo get_next_posts_link( 'Older Entries', $recent_posts->max_num_pages ); ?></div>
-			<div class="nav-next alignright"><?php echo get_previous_posts_link( 'Newer Entries' ); ?></div>
+
 			<?php
-				if ( $recent_posts->max_num_pages > 1 )
-					echo '<div class="bace_loadmore">' . __( 'More posts', 'bace' ) . '</div>';
-			?>
-			<?php wp_reset_postdata();
+				if ( $recent_posts->max_num_pages > 1 ) {
+					echo '<div class="bace-recent-post__loadmore">' . __( 'More News', 'bace' ) . '</div>';
+				}
+
+			wp_reset_postdata();
 		}
 	endif; //bace_recent_posts
 

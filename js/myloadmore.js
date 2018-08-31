@@ -1,5 +1,5 @@
 jQuery(function($){
-	$('.bace_loadmore').click(function(){
+	$('.bace-recent-post__loadmore').click(function(){
 
 		var button = $(this),
 			data = {
@@ -15,7 +15,6 @@ jQuery(function($){
 
 			beforeSend : function ( xhr ) {
 				button.text('Loading...'); // change the button text, you can also add a preloader image
-				// console.log(data);
 			},
 			success : function( data ){
 				if( data ) {

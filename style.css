@@ -389,6 +389,12 @@ a {
   .bace-most-recent-post__date {
     font-size: 0.6875rem; }
 
+.bace-recent-post__loadmore {
+  color: #044e8e;
+  cursor: pointer; }
+  .bace-recent-post__loadmore:hover {
+    text-decoration: underline; }
+
 .bace-footer-widget-title {
   background: transparent;
   border-left: 0;
