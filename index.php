@@ -20,7 +20,7 @@ get_header();
 
 			<?php
 			if ( have_posts() ) :
-
+				global $wp_query;
 				if ( is_home() && ! is_front_page() ) :
 					?>
 					<header>

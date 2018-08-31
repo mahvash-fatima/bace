@@ -17,6 +17,67 @@
 		}
 	endif; //bace_our_partners_default_slides
 
+	if( ! function_exists( 'bace_my_load_more_scripts' ) ) :
+		function bace_my_load_more_scripts() {
+
+			global $wp_query;
+
+			// register our main script but do not enqueue it yet
+			wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/js/myloadmore.js', array('jquery') );
+
+			// now the most interesting part
+			// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+			// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+			wp_localize_script( 'my_loadmore', 'bace_loadmore_params', array(
+				'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+				'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+				'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+				'max_page' => $wp_query->max_num_pages
+			) );
+
+			print_r($wp_query->query_vars);
+
+			wp_enqueue_script( 'my_loadmore' );
+		}
+
+		add_action( 'wp_enqueue_scripts', 'bace_my_load_more_scripts' );
+	endif; //bace_my_load_more_scripts
+
+	if( ! function_exists( 'bace_loadmore_ajax_handler' ) ) :
+		function bace_loadmore_ajax_handler(){
+
+			// prepare our arguments for the query
+			$args = json_decode( stripslashes( $_POST['query'] ), true );
+			$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+			$args['post_status'] = 'publish';
+
+			// it is always better to use WP_Query but not here
+			query_posts( $args );
+
+			if( have_posts() ) :
+
+				// run the loop
+				while( have_posts() ): the_post();
+
+					// look into your theme code how the posts are inserted, but you can use your own HTML of course
+					// do you remember? - my example is adapted for Twenty Seventeen theme
+	//					get_template_part( 'template-parts/post/content', get_post_format() );
+					// for the test purposes comment the line above and uncomment the below one
+					the_title();
+
+
+				endwhile;
+
+			endif;
+			die; // here we exit the script and even no wp_reset_query() required!
+		}
+
+
+
+		add_action('wp_ajax_loadmore', 'bace_loadmore_ajax_handler'); // wp_ajax_{action}
+		add_action('wp_ajax_nopriv_loadmore', 'bace_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+	endif; //bace_loadmore_ajax_handler
+
 	if( ! function_exists( 'bace_recent_posts' ) ) :
 		function bace_recent_posts()
 		{
@@ -51,8 +112,11 @@
 
 			<ul class="bace-recent-post__list">
 				<?php
-				$args = array( 'posts_per_page' => '6' );
-				$recent_posts = new WP_Query( $args );
+
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+				$recent_posts = new WP_Query( 'cat=1&paged=' . $paged );
+
 				while( $recent_posts->have_posts() )
 				{
 					$recent_posts->the_post() ;
@@ -61,12 +125,18 @@
 						continue;
 					} ?>
 
-
-						<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+					<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 
 				<?php } ?>
 			</ul>
+			<div class="nav-previous alignleft"><?php echo get_next_posts_link( 'Older Entries', $recent_posts->max_num_pages ); ?></div>
+			<div class="nav-next alignright"><?php echo get_previous_posts_link( 'Newer Entries' ); ?></div>
+			<?php
+				if ( $recent_posts->max_num_pages > 1 )
+					echo '<div class="bace_loadmore">' . __( 'More posts', 'bace' ) . '</div>';
+			?>
 			<?php wp_reset_postdata();
 		}
 	endif; //bace_recent_posts
+
 ?>
