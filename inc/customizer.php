@@ -67,7 +67,39 @@ class Bace_Customizer {
 				'label'       => __( 'Image', 'bace' ),
 				'settings'    => 'bace_slides['.$i.'][image]',
 			) ) );
+
 		}
+
+		/*==============================
+			  FOOTER
+		===============================*/
+		$wp_customize->add_panel( 'bace_footer_text_pannel', array(
+			'capability'     => 'edit_theme_options',
+			'title'          => __( 'Footer Text', 'bace' ),
+			'priority'       => 30,
+		) );
+
+		$wp_customize->add_section( 'bace_footer_text_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Footer Text' , 'bace' ),
+			'panel'       => 'bace_footer_text_pannel',
+		) );
+		$wp_customize->add_setting( 'bace_footer_text_setting', array(
+			'default'           => __( 'Sit arcu nec cras elit? Vut sagittis magna nisi vel integer arcu? Dis 
+			pulvinar scelerisque pulvinar rhoncus integer, integer in? Ac, cum etiam tortor duis placerat mid 
+			nunc cras integer, aliquam porttitor. Dis pulvinar scelerisque pulvinar rhoncus integer, integer 
+			in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquamporttitor.', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_footer_text_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_footer_text_section',
+			'label'       => __( 'Footer Text', 'bace' ),
+		) ) );
+
 		// We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';

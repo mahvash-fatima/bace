@@ -46,4 +46,10 @@
 		} );
 	} );
 
+	wp.customize( 'bace_footer_text_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-site-footer-disclaimer-para' ).text( to );
+		} );
+	} );
+
 } )( jQuery );

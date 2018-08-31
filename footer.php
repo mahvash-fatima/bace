@@ -47,14 +47,11 @@
 		<div class="bace-site-footer-disclaimer">
 			<div class="container">
 				<p class="bace-site-footer-disclaimer-para">
-					<?php
-						printf( esc_html__( '%1$s %2$s', 'bace' ),
-						'<strong>Disclaimer: </strong>', 'Sit arcu nec cras elit? Vut sagittis magna nisi vel 
-						integer arcu? Dis pulvinar scelerisque pulvinar rhoncus integer, integer in? Ac, cum etiam 
-						tortor duis placerat mid nunc cras integer, aliquam porttitor. Dis pulvinar scelerisque pulvinar
-						rhoncus integer, integer in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquam
-						porttitor.' );
-					?>
+					<?php echo get_theme_mod( 'bace_footer_text_setting', 'Sit arcu nec cras elit? 
+					Vut sagittis magna nisi vel integer arcu? Dis pulvinar scelerisque pulvinar rhoncus integer, 
+					integer in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquam porttitor. Dis 
+					pulvinar scelerisque pulvinar rhoncus integer, integer in? Ac, cum etiam tortor duis placerat 
+					mid nunc cras integer, aliquamporttitor.' ); ?>
 				</p>
 			</div>
 		</div><!-- .bace-footer-site-disclaimer-->
