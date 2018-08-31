@@ -5,6 +5,15 @@
 	select {
 		max-width: 100%;
 	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin-top: rem-calc(10);
+		margin-bottom: rem-calc(10);
+	}
 }
 
 .widget-title,
@@ -27,30 +36,48 @@
 }
 
 //Recent Posts Widget
-.bace-recent-post {
+.bace-most-recent-post {
 	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: rem-calc(20);
 	&__thumbnail {
-		width: 30%;
+		margin-top: 0;
+		margin-bottom: 0;
 		margin-right: rem-calc(10);
 		img {
+			max-width: 100px;
 			border: 5px solid $color__theme-tertiary;
 		}
 	}
 	&__content {
-		width: 70%;
+		flex-shrink: 1;
 	}
 	&__title {
-		font-size: rem-calc(13);
-		overflow: hidden;
-		text-overflow: ellipsis;
 		display: -webkit-box;
-		max-height: rem-calc(200);
-		-webkit-line-clamp: 3;
+		overflow: hidden;
 		-webkit-box-orient: vertical;
-		margin-top: rem-calc(10);
+		-webkit-line-clamp: 3;
+		max-height: rem-calc(200);
+		font-size: rem-calc(13);
+		text-overflow: ellipsis;
+		margin-top: 0;
 		margin-bottom: 0;
+		a {
+			color: $color__text-main;
+		}
 	}
 	&__date {
 		font-size: rem-calc(11);
 	}
+}
+
+// Footer Widgets
+
+.bace-footer-widget-title {
+	background: transparent;
+	border-left: 0;
+	padding-bottom: rem-calc(10);
+	margin-bottom: rem-calc(15);
+	border-bottom: 1px solid $color__border-footer;
 }

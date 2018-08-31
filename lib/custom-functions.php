@@ -29,43 +29,44 @@
 				$recent_posts->the_post() ;
 				$first_post_id = get_the_ID(); ?>
 
-				<article class="bace-recent-post">
+				<article class="bace-most-recent-post">
 					<?php if ( has_post_thumbnail() ) { ?>
 
-						<figure class="bace-recent-post__thumbnail">
+						<figure class="bace-most-recent-post__thumbnail">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-								<?php echo  get_the_post_thumbnail(); ?>
+								<?php echo  get_the_post_thumbnail('', 'post-thumbnail' ); ?>
 							</a>
 						</figure>
 
 					<?php } ?>
 
-					<div class="bace-recent-post__content">
-						<h3 class="bace-recent-post__title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-						<span class="bace-recent-post__date"><?php echo get_the_date(); ?></span>
+					<div class="bace-most-recent-post__content">
+						<h3 class="bace-most-recent-post__title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+						<span class="bace-most-recent-post__date"><?php echo get_the_date(); ?></span>
 					</div>
 				</article>
 			<?php }
 
-			wp_reset_postdata();
+			wp_reset_postdata(); ?>
 
-			$args = array( 'posts_per_page' => '3' );
-			$recent_posts = new WP_Query( $args );
-			while( $recent_posts->have_posts() )
-			{
-				$recent_posts->the_post() ;
+			<ul class="bace-recent-post__list">
+				<?php
+				$args = array( 'posts_per_page' => '3' );
+				$recent_posts = new WP_Query( $args );
+				while( $recent_posts->have_posts() )
+				{
+					$recent_posts->the_post() ;
 
-				if( get_the_ID() === $first_post_id ) {
-					continue;
-				} ?>
+					if( get_the_ID() === $first_post_id ) {
+						continue;
+					} ?>
 
-				<article class="bace-recent-post">
-					<h3 class="bace-recent-post__title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-				</article>
 
-			<?php }
+						<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 
-			wp_reset_postdata();
+				<?php } ?>
+			</ul>
+			<?php wp_reset_postdata();
 		}
 	endif; //bace_recent_posts
 ?>
