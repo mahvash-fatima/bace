@@ -51,7 +51,7 @@
 
 			<ul class="bace-recent-post__list">
 				<?php
-				$args = array( 'posts_per_page' => '3' );
+				$args = array( 'posts_per_page' => '6' );
 				$recent_posts = new WP_Query( $args );
 				while( $recent_posts->have_posts() )
 				{
