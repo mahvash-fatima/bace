@@ -47,30 +47,36 @@
 		function bace_loadmore_ajax_handler(){
 
 			// prepare our arguments for the query
-			$args = json_decode( stripslashes( $_POST['query'] ), true );
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+			$recent_posts = new WP_Query( 'cat=1&paged=' . $paged );
+
+			$args = json_decode( stripslashes( $recent_posts ), true );
 			$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
 			$args['post_status'] = 'publish';
 
 			// it is always better to use WP_Query but not here
 			query_posts( $args );
 
-			if( have_posts() ) :
+			echo '<ul>';
 
-				// run the loop
-				while( have_posts() ): the_post();
+				if( have_posts() ) :
 
-					// look into your theme code how the posts are inserted, but you can use your own HTML of course
-					// do you remember? - my example is adapted for Twenty Seventeen theme
-	//					get_template_part( 'template-parts/post/content', get_post_format() );
-					// for the test purposes comment the line above and uncomment the below one
-					the_title();
+					// run the loop
+					while( have_posts() ): the_post();
 
+						// look into your theme code how the posts are inserted, but you can use your own HTML of course
+						// do you remember? - my example is adapted for Twenty Seventeen theme
+						// get_template_part( 'template-parts/post/content', get_post_format() );
+						// for the test purposes comment the line above and uncomment the below one?>
+						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 
-				endwhile;
+					<?php endwhile;
 
-			endif;
-			die; // here we exit the script and even no wp_reset_query() required!
-		}
+				endif;
+			echo '</ul>';
+				die; // here we exit the script and even no wp_reset_query() required!
+				}
 
 
 

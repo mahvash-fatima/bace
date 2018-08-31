@@ -21,7 +21,6 @@ jQuery(function($){
 				if( data ) {
 					button.text( 'More posts' ).prev().before(data); // insert new posts
 					bace_loadmore_params.current_page++;
-					console.log(data);
 					if ( bace_loadmore_params.current_page === bace_loadmore_params.max_page )
 						button.remove(); // if last page, remove the button
 
