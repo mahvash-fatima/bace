@@ -31,7 +31,6 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 		echo '<div class="bace-recent-post__container">';
 		bace_recent_posts();
 		echo '</div>';
-		bace_recent_posts_loadmore();
 
 		echo $args['after_widget'];
 	}
