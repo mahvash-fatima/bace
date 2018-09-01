@@ -631,32 +631,42 @@ a {
 .bace-secondary-navbar-toggle {
   float: left; }
 
-.bace-search-form table {
+.bace-header-search-form table,
+.widget table {
   margin: 0; }
 
-.bace-search-form .gsc-search-button {
+.bace-header-search-form .gsc-search-button,
+.widget .gsc-search-button {
   display: none; }
 
-.bace-search-form .gsc-search-box-tools .gsc-search-box .gsc-input {
+.bace-header-search-form .gsc-search-box-tools .gsc-search-box .gsc-input,
+.widget .gsc-search-box-tools .gsc-search-box .gsc-input {
   min-width: 15.625rem; }
 
-.bace-search-form .gsc-control-cse {
+.bace-header-search-form .gsc-control-cse,
+.widget .gsc-control-cse {
   background: transparent;
   padding: 0;
   border: 0; }
 
-.bace-search-form form.gsc-search-box,
-.bace-search-form table.gsc-search-box {
+.bace-header-search-form form.gsc-search-box,
+.bace-header-search-form table.gsc-search-box,
+.widget form.gsc-search-box,
+.widget table.gsc-search-box {
   margin-bottom: 0; }
 
-.bace-search-form .gsc-search-box-tools .gsc-search-box .gsc-input,
-.bace-search-form .gsib_b {
+.bace-header-search-form .gsc-search-box-tools .gsc-search-box .gsc-input,
+.bace-header-search-form .gsib_b,
+.widget .gsc-search-box-tools .gsc-search-box .gsc-input,
+.widget .gsib_b {
   padding-right: 0; }
 
-.bace-search-form .gsc-input-box {
+.bace-header-search-form .gsc-input-box,
+.widget .gsc-input-box {
   border-color: #7f9ebb; }
 
-.bace-search-form .gsc-input {
+.bace-header-search-form .gsc-input,
+.widget .gsc-input {
   background: red; }
 
 /*--------------------------------------------------------------

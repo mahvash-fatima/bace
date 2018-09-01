@@ -53,7 +53,7 @@
 					</button>
 				</div><!-- .site-branding -->
 
-				<div class="bace-search-form">
+				<div class="bace-header-search-form">
 					<?php echo get_search_form(); ?>
 				</div><!-- .bace-search-form -->
 			</div>
