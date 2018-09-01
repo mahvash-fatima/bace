@@ -6,6 +6,7 @@
 		init: function () {
 			this.bannerSlider();
 			this.ourPartnersSlider();
+			// this.recentPostsSlider();
 		},
 
 		bannerSlider: function (  ) {
@@ -71,6 +72,14 @@
 						}
 					},
 				]
+			});
+		},
+
+		recentPostsSlider: function () {
+			$('.bace-recent-post__container').slick({
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
 			});
 		}
 	}
