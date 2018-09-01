@@ -27,7 +27,11 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 			echo $args[ 'before_title' ] . apply_filters( 'bace_recent_posts_widget_title', $instance[ 'title' ] ). $args[ 'after_title' ];
 		}
 
+		bace_most_recent_post();
+		echo '<div class="bace-recent-post__container">';
 		bace_recent_posts();
+		bace_recent_posts_loadmore();
+		echo '</div>';
 
 		echo $args['after_widget'];
 	}

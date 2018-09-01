@@ -224,6 +224,9 @@ require_once get_template_directory() . '/lib/recent-posts-widget.php';
 // Register Custom Functions
 require_once get_template_directory() . '/lib/custom-functions.php';
 
+// Register Recent Post
+require_once get_template_directory() . '/lib/most-recent-post.php';
+
 //echo "<pre>";
 //print_r(get_theme_mods());
 //echo "</pre>";

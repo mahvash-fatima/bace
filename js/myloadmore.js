@@ -2,6 +2,7 @@ jQuery(function($){
 	$('.bace-recent-post__loadmore').click(function(){
 
 		var button = $(this),
+			// recentPostContainer = $( '.bace-recent-post__container' ),
 			data = {
 				'action': 'loadmore',
 				'query': bace_loadmore_params.posts, // that's how we get params from wp_localize_script() function
