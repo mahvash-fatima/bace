@@ -57,3 +57,32 @@
 .bace-secondary-navbar-toggle {
 	float: left;
 }
+
+//Search Form
+.bace-search-form {
+	table {
+		margin: 0;
+	}
+	.gsc-search-button {
+		display: none;
+	}
+	.gsc-search-box-tools .gsc-search-box .gsc-input {
+		min-width: rem-calc(200);
+	}
+	.gsc-control-cse {
+		background: transparent;
+		padding: 0;
+		border: 0;
+	}
+	form.gsc-search-box,
+	table.gsc-search-box {
+		margin-bottom: 0;
+	}
+	.gsc-search-box-tools .gsc-search-box .gsc-input,
+	.gsib_b {
+		padding-right: 0;
+	}
+	.gsc-input-box {
+		border-color: #7f9ebb;
+	}
+}

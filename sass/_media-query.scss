@@ -29,6 +29,13 @@
 	.bace-secondary-navbar-nav>li>a:hover {
 		background: $color__background-link-hover;
 	}
+
+	.bace-site-branding-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
 }
 
 @media (min-width: 992px) {
