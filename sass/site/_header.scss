@@ -67,7 +67,7 @@
 		display: none;
 	}
 	.gsc-search-box-tools .gsc-search-box .gsc-input {
-		min-width: rem-calc(200);
+		min-width: rem-calc(250);
 	}
 	.gsc-control-cse {
 		background: transparent;
@@ -84,5 +84,8 @@
 	}
 	.gsc-input-box {
 		border-color: #7f9ebb;
+	}
+	.gsc-input {
+		background: red;
 	}
 }

@@ -638,7 +638,7 @@ a {
   display: none; }
 
 .bace-search-form .gsc-search-box-tools .gsc-search-box .gsc-input {
-  min-width: 12.5rem; }
+  min-width: 15.625rem; }
 
 .bace-search-form .gsc-control-cse {
   background: transparent;
@@ -655,6 +655,9 @@ a {
 
 .bace-search-form .gsc-input-box {
   border-color: #7f9ebb; }
+
+.bace-search-form .gsc-input {
+  background: red; }
 
 /*--------------------------------------------------------------
 ## Footer
