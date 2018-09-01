@@ -6,7 +6,7 @@
 		init: function () {
 			this.bannerSlider();
 			this.ourPartnersSlider();
-			// this.recentPostsSlider();
+			this.recentPostsSlider();
 		},
 
 		bannerSlider: function (  ) {

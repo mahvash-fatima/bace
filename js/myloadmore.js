@@ -2,7 +2,7 @@ jQuery(function($){
 	$('.bace-recent-post__loadmore').click(function(){
 
 		var button = $(this),
-			// recentPostContainer = $( '.bace-recent-post__container' ),
+			recentPostContainer = $( '.slick-track' ),
 			data = {
 				'action': 'loadmore',
 				'query': bace_loadmore_params.posts, // that's how we get params from wp_localize_script() function
@@ -19,7 +19,8 @@ jQuery(function($){
 			},
 			success : function( data ){
 				if( data ) {
-					button.text( 'More posts' ).prev().before(data); // insert new posts
+					button.text( 'More posts' );
+					recentPostContainer.append(data); // insert new posts
 					bace_loadmore_params.current_page++;
 					if ( bace_loadmore_params.current_page === bace_loadmore_params.max_page )
 						button.remove(); // if last page, remove the button
