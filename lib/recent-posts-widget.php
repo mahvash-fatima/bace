@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Adds Sidebar_Widget widget.
  */
@@ -10,9 +11,10 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 		parent::__construct(
 			'bace_recent_posts', // Base ID
 			__( 'Bace Recent Posts Widget', 'bace' ), // Name
-			apply_filters('bace_recent_posts_description', array( 'description' => __( 'Shows Widget for Recent Posts', 'bace' ), ) ) // Args
+			apply_filters( 'bace_recent_posts_description', array( 'description' => __( 'Shows Widget for Recent Posts', 'bace' ), ) ) // Args
 		);
 	}
+
 	/**
 	 * Front-end display of widget.
 	 *
@@ -22,15 +24,12 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		echo $args[ 'before_widget' ];
-		if ( ! empty( $instance[ 'title' ] ) ) {
-			echo $args[ 'before_title' ] . apply_filters( 'bace_recent_posts_widget_title', $instance[ 'title' ] ). $args[ 'after_title' ];
+		echo $args['before_widget'];
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'bace_recent_posts_widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
-		bace_most_recent_post();
-		echo '<div class="bace-recent-post__container">';
-		bace_recent_posts();
-		echo '</div>';
+		bace_get_news_slide( 3 );
 
 		echo $args['after_widget'];
 	}
@@ -47,7 +46,9 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'bace' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php
 	}
@@ -63,14 +64,16 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
+		$instance          = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
 		return $instance;
 	}
 
 }
+
 // register recent posts widget in sidebar
-if( ! function_exists( 'bace_register_recent_posts_widget' ) ) :
+if ( ! function_exists( 'bace_register_recent_posts_widget' ) ) :
 	function bace_register_recent_posts_widget() {
 		register_widget( 'Bace_Recent_Posts_Widget' );
 	}

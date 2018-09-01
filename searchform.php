@@ -9,7 +9,10 @@
 		s.parentNode.insertBefore(gcse, s);
 	})();
 	window.onload = function(){
-		document.getElementById('gsc-i-id1').placeholder = 'Site Search!';
+		var searchFormInput = document.getElementById('gsc-i-id1');
+		if ( searchFormInput ) {
+			searchFormInput.placeholder = 'Site Search!';
+		}
 	};
 </script>
 <gcse:search></gcse:search>
