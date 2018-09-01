@@ -39,9 +39,9 @@ if ( $get_posts->have_posts() ) {
 
 	foreach ( $result as $index => $category ) {
 		echo '<div class="col-md-3 col-sm-4">';
-		if(has_category_thumbnail( $cat_id[ $index ] )) {
-			the_category_thumbnail( $cat_id[ $index ] );
-		}
+		if(has_category_thumbnail( $cat_id[ $index ] )) { ?>
+			<a href="<?php echo $result_two[ $index ]; ?>"><?php the_category_thumbnail( $cat_id[ $index ] ); ?></a>
+		<?php }
 		echo '<h4><a href=' . $result_two[ $index ] . '>' . $category . '</a></h4>';
 		echo '</div>';
 	}
