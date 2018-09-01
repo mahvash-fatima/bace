@@ -1,0 +1,28 @@
+.bace-content {
+	&__category {
+		padding-left: rem-calc(5);
+		padding-right: rem-calc(5);
+	}
+
+	&__thumbnail {
+		img {
+			border: 5px solid $color__theme-tertiary;
+		}
+		margin-bottom: rem-calc(5);
+	}
+
+	&__thumbnail-link {
+		&:hover {
+			img {
+				@include transition;
+				border-color: $color__theme-secondary;
+			}
+		}
+	}
+
+	&__title {
+		font-size: inherit;
+		font-weight: inherit;
+		margin-top: 0;
+	}
+}

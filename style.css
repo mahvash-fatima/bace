@@ -372,6 +372,12 @@ a {
     .bace-most-recent-post__thumbnail img {
       max-width: 100px;
       border: 5px solid #d5ccb4; }
+      .bace-most-recent-post__thumbnail img:hover {
+        -webkit-transition: border-color 0.2s ease-in;
+        -moz-transition: border-color 0.2s ease-in;
+        -o-transition: border-color 0.2s ease-in;
+        transition: border-color 0.2s ease-in;
+        border-color: #b9a071; }
   .bace-most-recent-post__content {
     flex-shrink: 1; }
   .bace-most-recent-post__title {
@@ -432,6 +438,30 @@ a {
 
 .bace-our-partners__title, .bace-our-partners__slider {
   margin-bottom: 0.625rem; }
+
+/*--------------------------------------------------------------
+## Category Thumbnail
+--------------------------------------------------------------*/
+.bace-content__category {
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem; }
+
+.bace-content__thumbnail {
+  margin-bottom: 0.3125rem; }
+  .bace-content__thumbnail img {
+    border: 5px solid #d5ccb4; }
+
+.bace-content__thumbnail-link:hover img {
+  -webkit-transition: border-color 0.2s ease-in;
+  -moz-transition: border-color 0.2s ease-in;
+  -o-transition: border-color 0.2s ease-in;
+  transition: border-color 0.2s ease-in;
+  border-color: #b9a071; }
+
+.bace-content__title {
+  font-size: inherit;
+  font-weight: inherit;
+  margin-top: 0; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

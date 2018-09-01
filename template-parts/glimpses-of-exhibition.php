@@ -38,11 +38,11 @@ if ( $get_posts->have_posts() ) {
 	$result_two = array_unique( $cat_links );
 
 	foreach ( $result as $index => $category ) {
-		echo '<div class="col-md-3 col-sm-4">';
+		echo '<div class="bace-content__category col-sm-3 col-xs-4">';
 		if(has_category_thumbnail( $cat_id[ $index ] )) { ?>
-			<a href="<?php echo $result_two[ $index ]; ?>"><?php the_category_thumbnail( $cat_id[ $index ] ); ?></a>
+			<figure class="bace-content__thumbnail"><a href="<?php echo $result_two[ $index ]; ?>" class="bace-content__thumbnail-link"><?php the_category_thumbnail( $cat_id[ $index ] ); ?></a></figure>
 		<?php }
-		echo '<h4><a href=' . $result_two[ $index ] . '>' . $category . '</a></h4>';
+		echo '<h4 class="bace-content__title"><a href=' . $result_two[ $index ] . '>' . $category . '</a></h4>';
 		echo '</div>';
 	}
 
