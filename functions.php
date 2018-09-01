@@ -80,6 +80,8 @@ if ( ! function_exists( 'bace_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		add_theme_support('category-thumbnails');
 	}
 endif;
 add_action( 'after_setup_theme', 'bace_setup' );
