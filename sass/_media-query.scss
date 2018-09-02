@@ -47,10 +47,16 @@
 			width: 29%;
 		}
 	}
+
 	.bace-banner {
 		&__content {
-			letter-spacing: 0.6px;
+			letter-spacing: rem-calc(0.6);
 		}
+	}
+
+	.bace-content,
+	.bace-content__twitter {
+		border-right: 1px solid $color__border;
 	}
 }
 

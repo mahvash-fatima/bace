@@ -23,8 +23,11 @@
 
 .bace-our-partners {
 	&__section {
+		border-top: 1px solid $color__border;
 		border-bottom: 1px solid $color__border;
 		margin-bottom: rem-calc(20);
+		padding-top: rem-calc(20);
+
 	}
 	&__title,
 	&__slider {

@@ -3,8 +3,6 @@
 	&__category-container {
 		padding-left: rem-calc(10);
 		padding-right: rem-calc(10);
-		border-bottom: 1px solid $color__border;
-		margin-bottom: rem-calc(20);
 	}
 
 	&__category {
@@ -36,23 +34,24 @@
 		margin-top: 0;
 	}
 
-	&__twitter {
-		border-right: 1px solid $color__border;
-		padding-right: rem-calc(6);
-		padding-left: 0;
-	}
-
-	&__facebook {
-		padding-left: rem-calc(6);
-		padding-right: 0;
-	}
-
 	&__twitter,
 	&__facebook {
 		margin-bottom: rem-calc(20);
 	}
 
+	&__twitter {
+		padding-left: 0;
+	}
+
+	&__facebook {
+		margin-bottom: rem-calc(20);
+		padding-right: 0;
+	}
+
 	&__social {
-		border-bottom: 1px solid $color__border;
+		margin-left: 0;
+		margin-right: 0;
+		padding-top: rem-calc(20);
+		border-top: 1px solid $color__border;
 	}
 }
