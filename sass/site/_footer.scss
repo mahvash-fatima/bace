@@ -1,7 +1,3 @@
-body {
-	font-size: rem-calc(13);
-}
-
 .site-footer {
 	a {
 		color: $color__text-main;
@@ -12,22 +8,22 @@ body {
 	margin-bottom: rem-calc(20);
 }
 
-.bace-site-footer-disclaimer {
+.bace-footer-disclaimer {
 	font-size: rem-calc(11);
 	padding-top: rem-calc(8);
 	padding-bottom: rem-calc(8);
 	color: $color__text-light;
 	background: $color__footer;
+	&__para {
+		margin-bottom: 0;
+	}
 }
 
-.bace-site-footer-disclaimer-para {
-	margin-bottom: 0;
-}
-
-.bace-footer-content {
-	background: $color__theme-primary;
-}
-
-.bace-site-footer-logo {
-	margin-bottom: rem-calc(30);
+.bace-footer {
+	&__logo {
+		margin-bottom: rem-calc(30);
+	}
+	&__content {
+		background: $color__theme-primary;
+	}
 }

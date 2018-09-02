@@ -111,7 +111,8 @@ html {
 
 body {
   background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
+  /* Fallback for when there is no custom background color defined. */
+  font-size: 0.8125rem; }
 
 hr {
   background-color: #ccc;
@@ -694,30 +695,26 @@ a {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-body {
-  font-size: 0.8125rem; }
-
 .site-footer a {
   color: #404040; }
 
 .site-info {
   margin-bottom: 1.25rem; }
 
-.bace-site-footer-disclaimer {
+.bace-footer-disclaimer {
   font-size: 0.6875rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: #f3e3bd;
   background: #947f4b; }
+  .bace-footer-disclaimer__para {
+    margin-bottom: 0; }
 
-.bace-site-footer-disclaimer-para {
-  margin-bottom: 0; }
-
-.bace-footer-content {
-  background: #e6c36e; }
-
-.bace-site-footer-logo {
+.bace-footer__logo {
   margin-bottom: 1.875rem; }
+
+.bace-footer__content {
+  background: #e6c36e; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

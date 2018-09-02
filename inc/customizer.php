@@ -139,7 +139,7 @@ class Bace_Customizer {
 			'label'       => __( 'Facebook Text', 'bace' ),
 		) ) );
 
-		// Footer
+		// Footer Disclaimer
 		$wp_customize->add_section( 'bace_footer_text_section', array(
 			'capability'  => 'edit_theme_options',
 			'title'       => __( 'Footer Text' , 'bace' ),
@@ -161,7 +161,24 @@ class Bace_Customizer {
 			'label'       => __( 'Footer Text', 'bace' ),
 		) ) );
 
+		// Footer Copyright
+		$wp_customize->add_section( 'bace_footer_copyright_text_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Footer Copyright Text' , 'bace' ),
+			'panel'       => 'bace_edit_text_pannel',
+		) );
+		$wp_customize->add_setting( 'bace_footer_copyright_text_setting', array(
+			'default'           => __( 'All rights reserved.', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
 
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_footer_copyright_text_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_footer_copyright_text_section',
+			'label'       => __( 'Footer Text', 'bace' ),
+		) ) );
 
 		// We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';

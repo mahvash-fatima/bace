@@ -75,4 +75,11 @@
 		} );
 	} );
 
+	// Facebook Copyright Text
+	wp.customize( 'bace_footer_copyright_text_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-footer__copyright' ).text( to );
+		} );
+	} );
+
 } )( jQuery );

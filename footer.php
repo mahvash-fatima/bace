@@ -12,11 +12,11 @@
 ?>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="bace-footer-content">
+	<footer id="colophon" class="bace-footer site-footer">
+		<div class="bace-footer__content">
 			<div class="container">
 				<div class="row">
-					<div class="bace-site-footer-widgets">
+					<div class="bace-footer__widgets">
 						<?php
 							if ( is_active_sidebar( 'sidebar-2' ) ){
 								dynamic_sidebar( 'sidebar-2' );
@@ -24,13 +24,18 @@
 						?>
 					</div>
 					<div class="site-info col-md-4">
-						<figure class="bace-site-footer-logo">
+						<figure class="bace-footer__logo">
 							<?php the_custom_logo(); ?>
 						</figure>
-						<?php
+						<span>
+							<?php
 							printf( esc_html__( '%s', 'bace' ),
-							'<span>Copyrights &copy 2012. All rights reserved.</span>' );
-						?>
+								'<span>Copyrights &copy 2012.</span>' );
+							?>
+							<span class="bace-footer__copyright">
+								<?php echo esc_textarea( get_theme_mod( 'bace_footer_copyright_text_setting', 'All rights reserved.' ) ); ?>
+							</span>
+						</span>
 						<br />
 						<?php
 							printf( esc_html__( '%1$s %2$s %3$s %4$s %5$s', 'bace' ),
@@ -44,9 +49,9 @@
 			</div>
 		</div><!-- .bace-footer-widgets-->
 
-		<div class="bace-site-footer-disclaimer">
+		<div class="bace-footer-disclaimer">
 			<div class="container">
-				<p class="bace-site-footer-disclaimer-para">
+				<p class="bace-footer-disclaimer__para">
 					<?php echo esc_textarea( get_theme_mod( 'bace_footer_text_setting', 'Sit arcu nec cras elit? 
 					Vut sagittis magna nisi vel integer arcu? Dis pulvinar scelerisque pulvinar rhoncus integer, 
 					integer in? Ac, cum etiam tortor duis placerat mid nunc cras integer, aliquam porttitor. Dis 
