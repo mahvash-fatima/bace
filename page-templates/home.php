@@ -11,7 +11,7 @@ get_header();
 
 get_template_part('template-parts/banner');
 
-get_template_part( 'template-parts/category' ); ?>
+get_template_part( 'template-parts/main-content' ); ?>
 
 <?php get_template_part( 'template-parts/our-partners' );
 
