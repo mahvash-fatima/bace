@@ -449,12 +449,10 @@ a {
 --------------------------------------------------------------*/
 .bace-content {
   margin-bottom: 1.25rem; }
-  .bace-content__category-container {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+  .bace-content__category-title {
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem; }
   .bace-content__category {
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
     margin-bottom: 0.9375rem; }
   .bace-content__thumbnail {
     margin-top: 0;
@@ -473,14 +471,9 @@ a {
     margin-top: 0; }
   .bace-content__twitter, .bace-content__facebook {
     margin-bottom: 1.25rem; }
-  .bace-content__twitter {
-    padding-left: 0; }
   .bace-content__facebook {
-    margin-bottom: 1.25rem;
-    padding-right: 0; }
+    margin-bottom: 1.25rem; }
   .bace-content__social {
-    margin-left: 0;
-    margin-right: 0;
     padding-top: 1.25rem;
     border-top: 1px solid #c5c5c5; }
 
@@ -862,7 +855,14 @@ object {
     letter-spacing: 0.0375rem; }
   .bace-content,
   .bace-content__twitter {
-    border-right: 1px solid #c5c5c5; } }
+    border-right: 1px solid #c5c5c5; }
+  .bace-content__facebook {
+    padding-right: 0; }
+  .bace-content__twitter {
+    padding-left: 0; }
+  .bace-content__social {
+    margin-left: 0;
+    margin-right: 0; } }
 
 @media (max-width: 992px) {
   .custom-logo {

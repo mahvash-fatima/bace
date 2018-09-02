@@ -1,8 +1,8 @@
-<section class="bace-main container">
+<section class="bace-main">
 	<div class="row">
 		<div class="bace-content col-md-8">
 			<div class="bace-content__category-container row">
-				<h2 class="bace-title">Glimpses of Exhibition</h2>
+				<h2 class="bace-title bace-content__category-title">Glimpses of Exhibition</h2>
 				<?php get_template_part( 'template-parts/category-content' ); ?>
 			</div>
 			<div class="bace-content__social row">
@@ -14,7 +14,7 @@
 				<!-- https://developers.facebook.com/docs/plugins/page-plugin/-->
 				<div class="bace-content__facebook col-md-7">
 					<h2 class="bace-title">Follow us on Facebook</h2>
-					<div class="fb-page" data-href="https://www.facebook.com/babul.ilm.786/" data-small-header="false" data-width="500px" data-hide-cover="true" data-show-facepile="true">
+					<div class="fb-page" data-href="https://www.facebook.com/babul.ilm.786/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
 						<blockquote cite="https://www.facebook.com/babul.ilm.786/" class="fb-xfbml-parse-ignore">
 							<a href="https://www.facebook.com/babul.ilm.786/">Babul ilm</a>
 						</blockquote>

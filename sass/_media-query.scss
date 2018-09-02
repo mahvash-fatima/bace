@@ -58,6 +58,19 @@
 	.bace-content__twitter {
 		border-right: 1px solid $color__border;
 	}
+
+	.bace-content {
+		&__facebook {
+			padding-right: 0;
+		}
+		&__twitter {
+			padding-left: 0;
+		}
+		&__social {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 }
 
 @media (max-width: 992px) {
