@@ -13,7 +13,7 @@
 				</div>
 				<!-- https://developers.facebook.com/docs/plugins/page-plugin/-->
 				<div class="bace-content__facebook col-md-7">
-					<h2 class="bace-title">Follow us on Facebook</h2>
+					<h2 class="bace-title bace-content__facebook-title">Follow us on Facebook</h2>
 					<div class="fb-page" data-href="https://www.facebook.com/babul.ilm.786/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
 						<blockquote cite="https://www.facebook.com/babul.ilm.786/" class="fb-xfbml-parse-ignore">
 							<a href="https://www.facebook.com/babul.ilm.786/">Babul ilm</a>
