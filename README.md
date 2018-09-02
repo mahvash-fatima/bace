@@ -15,7 +15,7 @@ A starter theme called Bace.
 
 Bace is a responsive multipurpose theme.
 
-Font Awesome - https://fontawesome.com/
+Font Awesome: https://fontawesome.com/
 License: Font Awesome is licensed under the GPL license.
 Contributing author: Rob Madole (https://github.com/robmadole)
 Copyright: Copyright 2018 - Fonticons
@@ -29,6 +29,15 @@ Slick: https://getbootstrap.com/
 License: Slick is licensed under the MIT license.
 Contributing author: Ken Wheeler (https://github.com/kenwheeler)
 Copyright: Copyright (c) 2017 Ken Wheeler
+
+Tweets: https://developer.twitter.com/en/docs/twitter-for-websites/overview
+Copyright: © 2018 Twitter, Inc.
+
+Facebook Page Plugin: https://developers.facebook.com/docs/plugins/page-plugin/
+Copyright: Facebook © 2018
+
+Category Thumbnails: https://wordpress.org/plugins/category-thumbnails/
+Contributor: Adrian Preuss
 
 == Installation ==
 
