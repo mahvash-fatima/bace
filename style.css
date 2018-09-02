@@ -363,27 +363,27 @@ a {
   font-size: 3.75rem;
   font-weight: 300; }
 
-.bace-most-recent-post {
+.bace-most-recent-news {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1.25rem; }
-  .bace-most-recent-post__thumbnail {
+  .bace-most-recent-news__thumbnail {
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 0.625rem; }
-    .bace-most-recent-post__thumbnail img {
+    .bace-most-recent-news__thumbnail img {
       max-width: 100px;
       border: 5px solid #d5ccb4; }
-      .bace-most-recent-post__thumbnail img:hover {
+      .bace-most-recent-news__thumbnail img:hover {
         -webkit-transition: border-color 0.2s ease-in;
         -moz-transition: border-color 0.2s ease-in;
         -o-transition: border-color 0.2s ease-in;
         transition: border-color 0.2s ease-in;
         border-color: #b9a071; }
-  .bace-most-recent-post__content {
+  .bace-most-recent-news__content {
     flex-shrink: 1; }
-  .bace-most-recent-post__title {
+  .bace-most-recent-news__title {
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -393,15 +393,15 @@ a {
     text-overflow: ellipsis;
     margin-top: 0;
     margin-bottom: 0; }
-    .bace-most-recent-post__title a {
+    .bace-most-recent-news__title a {
       color: #404040; }
-  .bace-most-recent-post__date {
+  .bace-most-recent-news__date {
     font-size: 0.6875rem; }
 
-.bace-recent-post__loadmore {
+.bace-recent-news__loadmore {
   color: #044e8e;
   cursor: pointer; }
-  .bace-recent-post__loadmore:hover {
+  .bace-recent-news__loadmore:hover {
     text-decoration: underline; }
 
 .bace-footer-widget-title {

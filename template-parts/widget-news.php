@@ -13,10 +13,10 @@ if ( empty( $news_posts ) ) {
 $featured_news_post = array_shift( $news_posts );
 ?>
 
-<article class="bace-most-recent-post">
+<article class="bace-most-recent-news">
 	<?php if ( has_post_thumbnail( $featured_news_post ) ) { ?>
 
-		<figure class="bace-most-recent-post__thumbnail">
+		<figure class="bace-most-recent-news__thumbnail">
 			<a href="<?php echo esc_url( get_permalink( $featured_news_post->ID ) ); ?>" >
 				<?php echo get_the_post_thumbnail( $featured_news_post, 'post-thumbnail' ); ?>
 			</a>
@@ -24,18 +24,18 @@ $featured_news_post = array_shift( $news_posts );
 
 	<?php } ?>
 
-	<div class="bace-most-recent-post__content">
-		<h3 class="bace-most-recent-post__title">
+	<div class="bace-most-recent-news__content">
+		<h3 class="bace-most-recent-news__title">
 			<a href="<?php echo esc_url( get_permalink( $featured_news_post->ID ) ); ?>">
 				<?php echo esc_html( get_the_title( $featured_news_post->ID ) ); ?>
 			</a>
 		</h3>
-		<time class="bace-most-recent-post__date"><?php echo esc_html( get_the_date() ); ?></time>
+		<time class="bace-most-recent-news__date"><?php echo esc_html( get_the_date() ); ?></time>
 	</div>
 </article>
 
-<div class="bace-recent-post__container">
-	<ul class="bace-recent-post__list">
+<div class="bace-recent-news__container">
+	<ul class="bace-recent-news__list">
 		<?php if ( ! empty( $news_posts ) ) {
 			foreach ( $news_posts as $news_post ) { ?>
 				<li>

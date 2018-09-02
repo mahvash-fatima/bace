@@ -39,8 +39,8 @@
 	}
 }
 
-//Recent Posts Widget
-.bace-most-recent-post {
+//Recent News Widget
+.bace-most-recent-news {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -80,7 +80,7 @@
 	}
 }
 
-.bace-recent-post {
+.bace-recent-news {
 	&__loadmore {
 		color: $color__link;
 		cursor: pointer;

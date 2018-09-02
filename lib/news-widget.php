@@ -3,15 +3,15 @@
 /**
  * Adds Sidebar_Widget widget.
  */
-class Bace_Recent_Posts_Widget extends WP_Widget {
+class Bace_News_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'bace_recent_posts', // Base ID
-			__( 'Bace Recent Posts Widget', 'bace' ), // Name
-			apply_filters( 'bace_recent_posts_description', array( 'description' => __( 'Shows Widget for Recent Posts', 'bace' ), ) ) // Args
+			'news', // Base ID
+			__( 'Bace News Widget', 'bace' ), // Name
+			apply_filters( 'news_description', array( 'description' => __( 'Shows Widget for News', 'bace' ), ) ) // Args
 		);
 	}
 
@@ -26,7 +26,7 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'bace_recent_posts_widget_title', $instance['title'] ) . $args['after_title'];
+			echo $args['before_title'] . apply_filters( 'news_widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
 		bace_get_news_slide( 3 );
@@ -72,10 +72,10 @@ class Bace_Recent_Posts_Widget extends WP_Widget {
 
 }
 
-// register recent posts widget in sidebar
-if ( ! function_exists( 'bace_register_recent_posts_widget' ) ) :
-	function bace_register_recent_posts_widget() {
-		register_widget( 'Bace_Recent_Posts_Widget' );
+// register news widget in sidebar
+if ( ! function_exists( 'bace_register_news_widget' ) ) :
+	function bace_register_news_widget() {
+		register_widget( 'Bace_News_Widget' );
 	}
-endif;//bace_register_recent_posts_widget
-add_action( 'widgets_init', 'bace_register_recent_posts_widget' );
+endif;//bace_register_news_widget
+add_action( 'widgets_init', 'bace_register_news_widget' );
