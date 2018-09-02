@@ -1,10 +1,18 @@
 .bace-content {
+	&__category-container {
+		padding-left: rem-calc(10);
+		padding-right: rem-calc(10);
+		border-bottom: 1px solid $color__border;
+	}
+
 	&__category {
 		padding-left: rem-calc(5);
 		padding-right: rem-calc(5);
+		margin-bottom: rem-calc(15);
 	}
 
 	&__thumbnail {
+		margin-top: 0;
 		img {
 			border: 5px solid $color__theme-tertiary;
 		}
@@ -24,5 +32,20 @@
 		font-size: inherit;
 		font-weight: inherit;
 		margin-top: 0;
+	}
+
+	&__twitter {
+		border-right: 1px solid $color__border;
+	}
+
+	&__twitter,
+	&__facebook {
+		margin-top: rem-calc(20);
+	}
+
+	&__twitter-container {
+		padding-bottom: rem-calc(20);
+		border-bottom: 1px solid $color__border;
+		margin-bottom: rem-calc(20);
 	}
 }

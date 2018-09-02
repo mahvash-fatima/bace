@@ -347,11 +347,14 @@ a {
     margin-bottom: 0.625rem; }
 
 .widget-title,
-.bace-our-partners__title {
+.bace-title {
   background: #f4eede;
   padding: 6px 10px;
-  border-left: 8px solid #e6c36e;
-  margin-bottom: 1.25rem; }
+  border-left: 8px solid #e6c36e; }
+
+.bace-main .widget-title,
+.bace-title {
+  margin-top: 0; }
 
 .bace-timestamp__date {
   font-size: 1rem; }
@@ -442,11 +445,18 @@ a {
 /*--------------------------------------------------------------
 ## Category Thumbnail
 --------------------------------------------------------------*/
+.bace-content__category-container {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  border-bottom: 1px solid #c5c5c5; }
+
 .bace-content__category {
   padding-left: 0.3125rem;
-  padding-right: 0.3125rem; }
+  padding-right: 0.3125rem;
+  margin-bottom: 0.9375rem; }
 
 .bace-content__thumbnail {
+  margin-top: 0;
   margin-bottom: 0.3125rem; }
   .bace-content__thumbnail img {
     border: 5px solid #d5ccb4; }
@@ -462,6 +472,17 @@ a {
   font-size: inherit;
   font-weight: inherit;
   margin-top: 0; }
+
+.bace-content__twitter {
+  border-right: 1px solid #c5c5c5; }
+
+.bace-content__twitter, .bace-content__facebook {
+  margin-top: 1.25rem; }
+
+.bace-content__twitter-container {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 1.25rem; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

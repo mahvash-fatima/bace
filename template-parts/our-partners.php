@@ -8,7 +8,7 @@ $slides = get_theme_mod( 'bace_slides', bace_our_partners_default_slides() );
 ?>
 
 <section class="bace-our-partners__section">
-	<h2 class="bace-our-partners__title"><?php echo get_theme_mod('bace_slider_title_setting'); ?></h2>
+	<h2 class="bace-title"><?php echo get_theme_mod('bace_slider_title_setting'); ?></h2>
 
 	<div id="bace-our-partners__slider" class="bace-our-partners__slider">
 
