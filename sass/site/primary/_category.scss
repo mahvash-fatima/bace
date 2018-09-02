@@ -1,8 +1,10 @@
 .bace-content {
+	margin-bottom: rem-calc(20);
 	&__category-container {
 		padding-left: rem-calc(10);
 		padding-right: rem-calc(10);
 		border-bottom: 1px solid $color__border;
+		margin-bottom: rem-calc(20);
 	}
 
 	&__category {
@@ -36,16 +38,21 @@
 
 	&__twitter {
 		border-right: 1px solid $color__border;
+		padding-right: rem-calc(6);
+		padding-left: 0;
+	}
+
+	&__facebook {
+		padding-left: rem-calc(6);
+		padding-right: 0;
 	}
 
 	&__twitter,
 	&__facebook {
-		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
 	}
 
-	&__twitter-container {
-		padding-bottom: rem-calc(20);
+	&__social {
 		border-bottom: 1px solid $color__border;
-		margin-bottom: rem-calc(20);
 	}
 }

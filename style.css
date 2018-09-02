@@ -445,44 +445,43 @@ a {
 /*--------------------------------------------------------------
 ## Category Thumbnail
 --------------------------------------------------------------*/
-.bace-content__category-container {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  border-bottom: 1px solid #c5c5c5; }
-
-.bace-content__category {
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem;
-  margin-bottom: 0.9375rem; }
-
-.bace-content__thumbnail {
-  margin-top: 0;
-  margin-bottom: 0.3125rem; }
-  .bace-content__thumbnail img {
-    border: 5px solid #d5ccb4; }
-
-.bace-content__thumbnail-link:hover img {
-  -webkit-transition: border-color 0.2s ease-in;
-  -moz-transition: border-color 0.2s ease-in;
-  -o-transition: border-color 0.2s ease-in;
-  transition: border-color 0.2s ease-in;
-  border-color: #b9a071; }
-
-.bace-content__title {
-  font-size: inherit;
-  font-weight: inherit;
-  margin-top: 0; }
-
-.bace-content__twitter {
-  border-right: 1px solid #c5c5c5; }
-
-.bace-content__twitter, .bace-content__facebook {
-  margin-top: 1.25rem; }
-
-.bace-content__twitter-container {
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid #c5c5c5;
+.bace-content {
   margin-bottom: 1.25rem; }
+  .bace-content__category-container {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 1.25rem; }
+  .bace-content__category {
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    margin-bottom: 0.9375rem; }
+  .bace-content__thumbnail {
+    margin-top: 0;
+    margin-bottom: 0.3125rem; }
+    .bace-content__thumbnail img {
+      border: 5px solid #d5ccb4; }
+  .bace-content__thumbnail-link:hover img {
+    -webkit-transition: border-color 0.2s ease-in;
+    -moz-transition: border-color 0.2s ease-in;
+    -o-transition: border-color 0.2s ease-in;
+    transition: border-color 0.2s ease-in;
+    border-color: #b9a071; }
+  .bace-content__title {
+    font-size: inherit;
+    font-weight: inherit;
+    margin-top: 0; }
+  .bace-content__twitter {
+    border-right: 1px solid #c5c5c5;
+    padding-right: 0.375rem;
+    padding-left: 0; }
+  .bace-content__facebook {
+    padding-left: 0.375rem;
+    padding-right: 0; }
+  .bace-content__twitter, .bace-content__facebook {
+    margin-bottom: 1.25rem; }
+  .bace-content__social {
+    border-bottom: 1px solid #c5c5c5; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
