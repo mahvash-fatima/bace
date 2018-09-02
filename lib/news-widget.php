@@ -28,8 +28,20 @@ class Bace_News_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'news_widget_title', $instance['title'] ) . $args['after_title'];
 		}
+		?>
 
-		bace_get_news_slide( 3 );
+		<div id="news-slider" class="news-slider">
+			<?php bace_get_news_slide( 1 ); ?>
+			<div class="news-slider__footer" style="display:flex; justify-content: space-between;" >
+				<div class="news-slider-actions">
+					<button id="prev-news"> < </button>
+					<button id="next-news"> > </button>
+				</div>
+				<a href="<?php echo esc_url( get_category_link( 'news' ) ); ?>"><?php _e( 'More News', 'bace' ); ?></a>
+			</div>
+		</div>
+
+		<?php
 
 		echo $args['after_widget'];
 	}

@@ -1,22 +1,4 @@
 /**
- * Timestamp Widget
- */
-
-$(document).ready(function() {
-	setInterval(timestamp, 1000);
-});
-
-function timestamp() {
-	var ajaxUrl = baceTimestamp.ajaxurl;
-	$.ajax({
-		url: ajaxUrl,
-		success: function(data) {
-			$('#bace-timestamp__time').html(data);
-		},
-	});
-}
-
-/**
  * Facebook Page plugin
  * https://developers.facebook.com/docs/plugins/page-plugin/
  */

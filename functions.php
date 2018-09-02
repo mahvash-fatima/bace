@@ -175,10 +175,6 @@ function bace_scripts() {
 
 	wp_enqueue_script( 'bace-javascript-script', get_template_directory_uri() . '/js/javascript.js', array(), '1.8.1', true );
 
-	wp_localize_script( 'bace-javascript-script', 'baceTimestamp', array(
-		'ajaxurl' => get_template_directory_uri() . '/lib/timestamp-data.php',
-	) );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

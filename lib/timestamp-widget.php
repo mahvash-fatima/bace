@@ -27,12 +27,8 @@ class Bace_Timestamp_Widget extends WP_Widget {
 			echo $args[ 'before_title' ] . apply_filters( 'bace_timestamp_widget_title', $instance[ 'title' ] ). $args[ 'after_title' ];
 		}
 
-		get_template_part( 'timestamp' );
-		date_default_timezone_set('Asia/Bangkok');
-		$date = date( 'l, j F' );
-
-		echo '<span class="bace-timestamp__date">' . $date . '</span>';
-		echo '<h4 id="bace-timestamp__time" class="bace-timestamp__time">' . date( 'H:i:s' ) . '</h4>';
+		echo '<span id="timestamp-date" class="bace-timestamp__date"></span>';
+		echo '<h4 id="timestamp-time" class="bace-timestamp__time"></h4>';
 
 		echo $args['after_widget'];
 	}

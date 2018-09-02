@@ -3,10 +3,22 @@
 	"use strict";
 
 	window.Base = {
+
 		init: function () {
+			var _this = this;
+
 			this.bannerSlider();
 			this.ourPartnersSlider();
 			this.recentPostsSlider();
+
+			this.timestampDate = $( '#timestamp-date' );
+			this.timestampTime = $( '#timestamp-time' );
+
+			if ( this.timestampDate.length ) {
+				setInterval( function() {
+					_this.createDateTimeWidget();
+				}, 1000 );
+			}
 		},
 
 		bannerSlider: function (  ) {
@@ -81,8 +93,79 @@
 				slidesToShow: 1,
 				slidesToScroll: 1,
 			});
+		},
+
+		createDateTimeWidget: function() {
+			var date = new Date(),
+				todayDate = date.getDate(),
+				month = date.getMonth(),
+				weekDay = date.getDay(),
+				year = date.getFullYear(),
+				hours = date.getHours(),
+				minutes = date.getMinutes(),
+				seconds = date.getSeconds(),
+				today = todayDate + ' ' + year,
+				monthNames = [ 'January', 'February', 'March', 'April', 'May', 'June',
+					'July', 'August', 'September', 'October', 'November', 'December'
+				],
+				weekDayNames = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday' ];
+
+				month = monthNames[ month ];
+				weekDay = weekDayNames[ weekDay ];
+
+			var dateString = weekDay +  ', ' + todayDate + ' ' + month,
+				timeString = this.paddZero( hours ) + ':' + this.paddZero( minutes ) + ':' + this.paddZero( seconds );
+
+
+			this.timestampDate.html( dateString );
+			this.timestampTime.html( timeString );
+
+		},
+
+		paddZero( number ) {
+			return number < 10 ? '0' + number : number;
 		}
 	}
+
+
+	var newsSlider = {
+
+		nextSlideNumber: 1,
+
+		init: function() {
+
+			this.nextButton = $( '#news-next' );
+			this.prevButton = $( '#news-prev' );
+
+		},
+
+		fetchNextSlide() {
+			var _this = this;
+
+			this.nextButton.prop( 'disabled', true );
+
+			this.nextSlideNumber++;
+
+			$.ajax( 'action', {
+				data: {
+					action: 'fetch_next_slide',
+					slideNumber: this.nextSlideNumber
+				}
+			} ).done( function( response ) {
+
+				this.createNextSlide( response );
+
+			} ).always( function() {
+			    _this.nextButton.prop( 'disabled', false );
+			} );
+
+		},
+
+		createNextSlide: function( response ) {
+			// @todo Add next slide with slick.
+		}
+
+	};
 
 })( jQuery );
 
