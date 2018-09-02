@@ -71,18 +71,79 @@ class Bace_Customizer {
 		}
 
 		/*==============================
-			  FOOTER
+			  Edit Text
 		===============================*/
-		$wp_customize->add_panel( 'bace_footer_text_pannel', array(
+
+		// Category Title
+		$wp_customize->add_panel( 'bace_edit_text_pannel', array(
 			'capability'     => 'edit_theme_options',
-			'title'          => __( 'Footer Text', 'bace' ),
+			'title'          => __( 'Edit Text', 'bace' ),
 			'priority'       => 30,
 		) );
 
+		$wp_customize->add_section( 'bace_category_text_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Category Title' , 'bace' ),
+			'panel'       => 'bace_edit_text_pannel',
+		) );
+		$wp_customize->add_setting( 'bace_category_text_setting', array(
+			'default'           => __( 'Glimpses of Exhibition', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_category_text_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_category_text_section',
+			'label'       => __( 'Footer Text', 'bace' ),
+		) ) );
+
+		// Tweets Title
+		$wp_customize->add_section( 'bace_latest_tweets_text_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Tweets Title' , 'bace' ),
+			'panel'       => 'bace_edit_text_pannel',
+		) );
+
+		$wp_customize->add_setting( 'bace_latest_tweets_text_setting', array(
+			'default'           => __( 'Latest Tweets', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_latest_tweets_text_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_latest_tweets_text_section',
+			'label'       => __( 'Tweets Text', 'bace' ),
+		) ) );
+
+		// Facebook Title
+		$wp_customize->add_section( 'bace_facebook_text_section', array(
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Facebook Title' , 'bace' ),
+			'panel'       => 'bace_edit_text_pannel',
+		) );
+
+		$wp_customize->add_setting( 'bace_facebook_text_setting', array(
+			'default'           => __( 'Follow us on Facebook', 'bace' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'bace_facebook_text_setting', array(
+			'type'        => 'text',
+			'section'     => 'bace_facebook_text_section',
+			'label'       => __( 'Facebook Text', 'bace' ),
+		) ) );
+
+		// Footer
 		$wp_customize->add_section( 'bace_footer_text_section', array(
 			'capability'  => 'edit_theme_options',
 			'title'       => __( 'Footer Text' , 'bace' ),
-			'panel'       => 'bace_footer_text_pannel',
+			'panel'       => 'bace_edit_text_pannel',
 		) );
 		$wp_customize->add_setting( 'bace_footer_text_setting', array(
 			'default'           => __( 'Sit arcu nec cras elit? Vut sagittis magna nisi vel integer arcu? Dis 
@@ -99,6 +160,8 @@ class Bace_Customizer {
 			'section'     => 'bace_footer_text_section',
 			'label'       => __( 'Footer Text', 'bace' ),
 		) ) );
+
+
 
 		// We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';

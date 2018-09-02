@@ -40,15 +40,38 @@
 		} );
 	} );
 
+	// Our Partners Slider Title
 	wp.customize( 'bace_slider_title_setting', function( value ) {
 		value.bind( function( to ) {
 			$( '.bace-our-partners__title' ).text( to );
 		} );
 	} );
 
+	// Footer Text
 	wp.customize( 'bace_footer_text_setting', function( value ) {
 		value.bind( function( to ) {
 			$( '.bace-site-footer-disclaimer-para' ).text( to );
+		} );
+	} );
+
+	// Category Title
+	wp.customize( 'bace_category_text_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-content__category-title' ).text( to );
+		} );
+	} );
+
+	// Latest Tweets Text
+	wp.customize( 'bace_latest_tweets_text_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-content__twitter-title' ).text( to );
+		} );
+	} );
+
+	// Facebook Title
+	wp.customize( 'bace_facebook_text_setting', function( value ) {
+		value.bind( function( to ) {
+			$( '.bace-content__facebook-title' ).text( to );
 		} );
 	} );
 
