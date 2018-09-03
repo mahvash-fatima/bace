@@ -37,13 +37,25 @@
 							</span>
 						</span>
 						<br />
+
 						<?php
-							printf( esc_html__( '%1$s %2$s %3$s %4$s %5$s', 'bace' ),
-								'<a href="https://rtcamp.com/privacy-policy">Terms of Use</a>',
-								'<span class="sep">|</span>',
-								'<a href="https://rtcamp.com/privacy-policy">Privacy Policy</a>',
-								'<span>Designed by', '<a href="https://rtcamp.com">rtCamp</a></span>' );
+							$privacy_policy_url = esc_url( 'https://rtcamp.com/privacy-policy' );
+							$rt_camp_url = esc_url( 'https://rtcamp.com' );
 						?>
+
+						<a href="<?php echo $privacy_policy_url; ?>">
+							<?php _e( 'Terms of Use', 'bace' ); ?>
+						</a>
+						<span class="bace-sep">|</span>
+						<a href="<?php echo $privacy_policy_url; ?>">
+							<?php _e( 'Privacy Policy', 'bace' ); ?>
+						</a>
+						<span class="bace-sep">|</span>
+						<span>
+							<?php _e( 'Designed by', 'bace' ); ?>
+							<a href=""><?php _e( 'rtCamp', 'bace' ); ?></a>
+						</span>
+
 					</div>
 				</div>
 			</div>
