@@ -898,5 +898,5 @@ object {
     background: transparent; }
   .bace-secondary-navbar {
     text-align: center; }
-  .bace-content__category:nth-child(4n+0) {
+  .bace-content__category:nth-child(3n+1) {
     clear: left; } }
