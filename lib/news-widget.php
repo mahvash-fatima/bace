@@ -46,7 +46,6 @@ class Bace_News_Widget extends WP_Widget {
 			</div>
 		</div>
 
-
 		<?php
 
 		echo $args['after_widget'];
