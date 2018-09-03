@@ -433,6 +433,9 @@ a {
 .updated:not(.published) {
   display: none; }
 
+.bace-main {
+  padding-bottom: 1.25rem; }
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -858,7 +861,8 @@ object {
     width: 29%; }
   .bace-banner__content {
     letter-spacing: 0.0375rem; }
-  .bace-content,
+  .bace-main .widget-area {
+    border-left: 1px solid #c5c5c5; }
   .bace-content__twitter {
     border-right: 1px solid #c5c5c5; }
   .bace-content__facebook {

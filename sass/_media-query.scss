@@ -54,7 +54,9 @@
 		}
 	}
 
-	.bace-content,
+	.bace-main .widget-area {
+		border-left: 1px solid $color__border;
+	}
 	.bace-content__twitter {
 		border-right: 1px solid $color__border;
 	}
