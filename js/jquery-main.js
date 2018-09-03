@@ -10,6 +10,7 @@
 			this.bannerSlider();
 			this.ourPartnersSlider();
 			this.recentPostsSlider();
+			newsSlider.init();
 
 			this.timestampDate = $( '#timestamp-date' );
 			this.timestampTime = $( '#timestamp-time' );
@@ -19,6 +20,7 @@
 					_this.createDateTimeWidget();
 				}, 1000 );
 			}
+
 		},
 
 		bannerSlider: function (  ) {
@@ -125,47 +127,68 @@
 		paddZero( number ) {
 			return number < 10 ? '0' + number : number;
 		}
-	}
-
+	};
 
 	var newsSlider = {
 
 		nextSlideNumber: 1,
 
+		ajaxUrl: baceFetchSlides.ajaxurl,
+
 		init: function() {
-
-			this.nextButton = $( '#news-next' );
-			this.prevButton = $( '#news-prev' );
-
-		},
-
-		fetchNextSlide() {
 			var _this = this;
 
-			this.nextButton.prop( 'disabled', true );
+			this.nextButton = $('#next-news');
+			this.prevButton = $('#prev-news');
+			this.newsSlider = $( '#news-slick-slider' );
 
-			this.nextSlideNumber++;
+			this.newsSlider.slick( {
+				nextArrow: this.nextButton,
+				prevArrow: this.prevButton
+			} );
 
-			$.ajax( 'action', {
-				data: {
-					action: 'fetch_next_slide',
-					slideNumber: this.nextSlideNumber
-				}
-			} ).done( function( response ) {
-
-				this.createNextSlide( response );
-
-			} ).always( function() {
-			    _this.nextButton.prop( 'disabled', false );
+			this.newsSlider.on( 'beforeChange', function( event, slick, currentSlide, nextSlide ) {
+				_this.fetchNextSlide();
 			} );
 
 		},
 
-		createNextSlide: function( response ) {
-			// @todo Add next slide with slick.
-		}
+		fetchNextSlide: function () {
+			var _this = this;
 
-	};
+			this.nextButton.prop( 'disabled', true );
+
+			var request = $.ajax( {
+				url: this.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'bace_get_slides',
+					security: baceFetchSlides.security,
+					slideNumber: _this.nextSlideNumber,
+				}
+			} );
+
+			request.done( function ( response ) {
+				if ( response.data ) {
+					_this.createNextSlide( response.data );
+				}
+			} );
+
+			request.always( function() {
+				_this.nextButton.prop( 'disabled', false );
+			} );
+
+		},
+
+		createNextSlide: function( data ) {
+
+			if ( ! data.slide ) {
+				return;
+			}
+
+			this.newsSlider.slick( 'slickAdd', data.slide );
+		}
+	}
 
 })( jQuery );
 
