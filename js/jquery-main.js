@@ -131,12 +131,7 @@
 
 	var newsSlider = {
 
-		nextSlideNumber: 1,
-
-		ajaxUrl: baceFetchSlides.ajaxurl,
-
 		init: function() {
-			var _this = this;
 
 			this.nextButton = $('#next-news');
 			this.prevButton = $('#prev-news');
@@ -147,46 +142,6 @@
 				prevArrow: this.prevButton
 			} );
 
-			this.newsSlider.on( 'beforeChange', function( event, slick, currentSlide, nextSlide ) {
-				_this.fetchNextSlide();
-			} );
-
-		},
-
-		fetchNextSlide: function () {
-			var _this = this;
-
-			this.nextButton.prop( 'disabled', true );
-
-			var request = $.ajax( {
-				url: this.ajaxUrl,
-				type: 'POST',
-				data: {
-					action: 'bace_get_slides',
-					security: baceFetchSlides.security,
-					slideNumber: _this.nextSlideNumber,
-				}
-			} );
-
-			request.done( function ( response ) {
-				if ( response.data ) {
-					_this.createNextSlide( response.data );
-				}
-			} );
-
-			request.always( function() {
-				_this.nextButton.prop( 'disabled', false );
-			} );
-
-		},
-
-		createNextSlide: function( data ) {
-
-			if ( ! data.slide ) {
-				return;
-			}
-
-			this.newsSlider.slick( 'slickAdd', data.slide );
 		}
 	}
 

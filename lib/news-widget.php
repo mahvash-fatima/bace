@@ -32,10 +32,7 @@ class Bace_News_Widget extends WP_Widget {
 
 		<div id="news-slider" class="news-slider">
 			<div id="news-slick-slider">
-				<?php bace_get_news_slide( 1 ); ?>
-				<?php for ( $i = 0; $i < 10; $i++ ) { ?>
-					<div class="slick-next-loader"><img width="30" src="<?php echo get_template_directory_uri() . '/img/ajax-loader.gif'; ?>" alt=""></div>
-				<?php } ?>
+				<?php get_template_part( 'template-parts/widget', 'news' ); ?>
 			</div>
 			<div class="news-slider__footer" style="display:flex; justify-content: space-between;" >
 				<div class="news-slider-actions">

@@ -175,11 +175,6 @@ function bace_scripts() {
 
 	wp_enqueue_script( 'bace-javascript-script', get_template_directory_uri() . '/js/javascript.js', array(), '1.8.1', true );
 
-	wp_localize_script( 'bace-jquery-main-script', 'baceFetchSlides', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-		'security' => wp_create_nonce( 'bace-get-slides' ),
-	) );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -21,25 +21,31 @@ endif; //bace_our_partners_default_slides
 /**
  * Get news posts.
  *
- * @param int $paged $paged.
- *
  * @return array
  */
-function bace_get_news_posts( $paged = 1 ) {
+function bace_get_news_posts() {
 
 	$query = new WP_Query( array(
 		'post_type'      => 'post',
 		'post_status'    => 'publish',
-		'paged'           => $paged,
 		//'category' => 'news',
-		'posts_per_page' => 8
+		'posts_per_page' => 24,
+		'fields'         => 'ids'
 	) );
 
-	return $query->posts;
-}
+	$post_ids = array();
+	$set = 0;
 
-function bace_get_news_slide( $paged = 1 ) {
+	if ( ! empty( $query->posts ) ) {
+		foreach ( $query->posts as $key => $post_id ) {
+			if ( $key % 8 === 0 ) {
+				$set++;
+				$post_ids[ $set ] = array();
+			}
 
-	set_query_var( 'news_page', $paged );
-	get_template_part( 'template-parts/widget', 'news' );
+			$post_ids[ $set ][] = $post_id;
+		}
+	}
+
+	return $post_ids;
 }
