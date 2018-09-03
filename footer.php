@@ -29,8 +29,8 @@
 						</figure>
 						<span>
 							<?php
-							printf( esc_html__( '%s', 'bace' ),
-								'<span>Copyrights &copy 2012.</span>' );
+							printf( esc_html__( '%1$s %2$s %3$s', 'bace' ),
+								'<span>Copyrights', '&copy', date('Y.')  );
 							?>
 							<span class="bace-footer__copyright">
 								<?php echo esc_textarea( get_theme_mod( 'bace_footer_copyright_text_setting', 'All rights reserved.' ) ); ?>
