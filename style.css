@@ -828,6 +828,8 @@ object {
 @media (min-width: 768px) {
   .site-header {
     padding-top: 1.25rem; }
+  .bace-content__category:nth-child(5n+0) {
+    clear: left; }
   .bace-site-header-wrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -895,4 +897,6 @@ object {
   .bace-secondary-navbar-nav > li > a:hover {
     background: transparent; }
   .bace-secondary-navbar {
-    text-align: center; } }
+    text-align: center; }
+  .bace-content__category:nth-child(4n+0) {
+    clear: left; } }

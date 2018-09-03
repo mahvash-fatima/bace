@@ -3,6 +3,14 @@
 		padding-top: rem-calc(20);
 	}
 
+	.bace-content {
+		&__category {
+			&:nth-child(5n+0) {
+				clear: left;
+			}
+		}
+	}
+
 	.bace-site-header-wrapper {
 		display: flex;
 		flex-direction: column-reverse;
@@ -86,28 +94,42 @@
 	.custom-logo {
 		max-width: rem-calc(100);
 	}
+
 	.custom-logo-link {
 		padding-top: rem-calc(10);
 		padding-bottom: rem-calc(10);
 	}
+
 	.bace-primary-navbar,
 	.bace-secondary-navbar {
 		margin-bottom: 0;
 		min-height: auto;
 	}
+
 	.bace-primary-navbar-nav>li>a {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
 	.bace-site-header-wrapper {
 		text-align: center;
 	}
+
 	.bace-secondary-navbar-nav .current-menu-item a,
 	.bace-secondary-navbar-nav>li>a:hover,
 	.bace-secondary-navbar-nav>li>a:hover {
 		background: transparent;
 	}
+
 	.bace-secondary-navbar {
 		text-align: center;
+	}
+
+	.bace-content {
+		&__category {
+			&:nth-child(4n+0) {
+				clear: left;
+			}
+		}
 	}
 }
