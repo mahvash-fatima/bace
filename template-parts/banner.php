@@ -15,7 +15,13 @@
 					while ( $the_query->have_posts() ) : $the_query->the_post();
 			?>
 					<li>
-						<?php the_post_thumbnail(); ?>
+						<?php
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail();
+							} else { ?>
+								<img src="<?php echo esc_attr( get_template_directory_uri() . '/img/no-thumbnail.png' ); ?>" alt="<?php the_title(); ?>" />
+							<?php }
+						?>
 						<div class="bace-banner__slide-content">
 							<h2 class="bace-banner__content-title"><?php the_title(); ?></h2>
 							<?php the_excerpt(); ?>
@@ -42,7 +48,17 @@
 		if ( $the_query->have_posts() ) :
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 	?>
-				<li><div class="bace-banner__slider-image"><?php the_post_thumbnail(); ?></div></li>
+				<li>
+					<div class="bace-banner__slider-image">
+						<?php
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail();
+							} else { ?>
+								<img src="<?php echo esc_attr( get_template_directory_uri() . '/img/no-thumbnail.png' ); ?>" alt="<?php the_title(); ?>" />
+							<?php }
+						?>
+					</div>
+				</li>
 	<?php
 			endwhile;
 			wp_reset_postdata();
