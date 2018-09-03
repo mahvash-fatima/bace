@@ -132,4 +132,12 @@
 			}
 		}
 	}
+
+	.bace-content {
+		&__category {
+			&:last-child {
+				clear: left;
+			}
+		}
+	}
 }

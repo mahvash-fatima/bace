@@ -180,6 +180,11 @@ class Bace_Customizer {
 			'label'       => __( 'Footer Text', 'bace' ),
 		) ) );
 
+		/*==============================
+			  Tweets
+		===============================*/
+
+
 		// We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
