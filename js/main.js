@@ -7,6 +7,8 @@
 		init: function () {
 			var _this = this;
 
+			this.slideForSidebarContent = $('#bace-banner__content');
+
 			this.bannerSlider();
 			this.ourPartnersSlider();
 			this.recentPostsSlider();
@@ -24,7 +26,8 @@
 		},
 
 		bannerSlider: function (  ) {
-			var sliderFor = $('.bace-banner__slider-for');
+			var _this = this,
+				sliderFor = $('.bace-banner__slider-for');
 
 			sliderFor.slick({
 				slidesToShow: 1,
@@ -58,13 +61,18 @@
 				]
 			});
 
-			sliderFor.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-				var sliderFor = $('.bace-banner__slider-for'),
-					slideForCurrentContent = $('.bace-banner__slider-for .slick-current .bace-banner__slide-content'),
-					slideForSidebarContent = $('#bace-banner__content'),
-					a = slideForCurrentContent.html();
-				slideForSidebarContent.html(a);
+			this.updateSlideContent();
+
+			sliderFor.on('beforeChange', function(){
+				_this.updateSlideContent();
 			});
+		},
+
+		updateSlideContent: function() {
+			var slideForCurrentContent = $('.bace-banner__slider-for .slick-current .bace-banner__slide-content'),
+				a = slideForCurrentContent.html();
+
+			this.slideForSidebarContent.html( a );
 		},
 
 		ourPartnersSlider: function (  ) {

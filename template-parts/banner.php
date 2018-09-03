@@ -1,19 +1,10 @@
 <?php
 	$the_query = new WP_Query( array(
 		'category_name' => 'featured-posts',
-		'posts_per_page' => 6,
+		'posts_per_page' => 7,
 		'post_type' => 'post',
 		'post_status' => 'publish',
 	));
-	$the_query_two = new WP_Query( array(
-		'category_name' => 'featured-posts',
-		'posts_per_page' => 1,
-		'post_type' => 'post',
-		'post_status' => 'publish',
-	));
-//	echo "<pre>";
-//	print_r($the_query);
-//	echo "</pre>";
 ?>
 
 <div class="bace-banner row">
@@ -39,20 +30,10 @@
 		</ul>
 	</div>
 	<div id="bace-banner__content" class="bace-banner__content col-md-3 bace-banner__sidebar">
-		<?php
-		if ( $the_query_two->have_posts() ) :
-			while ( $the_query_two->have_posts() ) : $the_query_two->the_post();
-				?>
-				<div>
-					<h2 class="bace-banner__content-title"><?php the_title(); ?></h2>
-					<?php the_excerpt(); ?>
-				</div>
-
-			<?php
-			endwhile;
-			wp_reset_postdata();
-		endif;
-		?>
+		<div>
+			<h2 class="bace-banner__content-title"><?php the_title(); ?></h2>
+			<div id="bace-banner-excerpt"></div>
+		</div>
 	</div>
 </div>
 
