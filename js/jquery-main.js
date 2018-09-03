@@ -133,9 +133,9 @@
 
 		init: function() {
 
-			this.nextButton = $('#next-news');
-			this.prevButton = $('#prev-news');
-			this.newsSlider = $( '#news-slick-slider' );
+			this.nextButton = $('#bace-next-news');
+			this.prevButton = $('#bace-prev-news');
+			this.newsSlider = $( '#bace-news-slider__slick' );
 
 			this.newsSlider.slick( {
 				nextArrow: this.nextButton,

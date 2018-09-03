@@ -28,7 +28,7 @@ function bace_get_news_posts() {
 	$query = new WP_Query( array(
 		'post_type'      => 'post',
 		'post_status'    => 'publish',
-		//'category' => 'news',
+		'category_name'  => 'news',
 		'posts_per_page' => 24,
 		'fields'         => 'ids'
 	) );

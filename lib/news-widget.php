@@ -30,18 +30,22 @@ class Bace_News_Widget extends WP_Widget {
 		}
 		?>
 
-		<div id="news-slider" class="news-slider">
-			<div id="news-slick-slider">
+		<div id="bace-news-slider" class="bace-news-slider">
+			<div id="bace-news-slider__slick">
 				<?php get_template_part( 'template-parts/widget', 'news' ); ?>
 			</div>
-			<div class="news-slider__footer" style="display:flex; justify-content: space-between;" >
-				<div class="news-slider-actions">
-					<button id="prev-news"> < </button>
-					<button id="next-news"> > </button>
+			<div class="bace-news-slider__footer"" >
+				<div class="bace-news-slider-actions">
+					<button id="bace-prev-news"><i class="fas fa-angle-left bace-icon"></i></button>
+					<button id="bace-next-news"><i class="fas fa-angle-right bace-icon"></i></button>
 				</div>
-				<a href="<?php echo esc_url( get_category_link( 'news' ) ); ?>"><?php _e( 'More News', 'bace' ); ?></a>
+				<?php
+					$category_id = get_cat_ID( 'news' );
+				?>
+				<a href="<?php echo esc_url( get_category_link( $category_id ) ); ?>"><?php _e( 'More News', 'bace' ); ?></a>
 			</div>
 		</div>
+
 
 		<?php
 

@@ -220,9 +220,6 @@ require_once get_template_directory() . '/lib/news-widget.php';
 // Register Custom Functions
 require_once get_template_directory() . '/lib/custom-functions.php';
 
-// Register Custom Functions
-require_once get_template_directory() . '/lib/news-post-data.php';
-
 //echo "<pre>";
 //print_r(get_theme_mods());
 //echo "</pre>";

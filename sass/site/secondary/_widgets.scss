@@ -49,6 +49,7 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-right: rem-calc(10);
+		min-width: rem-calc(100);
 		img {
 			max-width: 100px;
 			border: 5px solid $color__theme-tertiary;
@@ -58,15 +59,11 @@
 			}
 		}
 	}
-	&__content {
-		flex-shrink: 1;
-	}
 	&__title {
 		display: -webkit-box;
 		overflow: hidden;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
-		max-height: rem-calc(200);
 		font-size: rem-calc(13);
 		text-overflow: ellipsis;
 		margin-top: 0;
@@ -87,6 +84,14 @@
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+// News Slider
+.bace-news-slider {
+	&__footer {
+		display: flex;
+		justify-content: space-between;
 	}
 }
 
