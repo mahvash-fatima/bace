@@ -40,7 +40,11 @@ if ( $get_posts->have_posts() ) {
 	foreach ( $result as $index => $category ) {
 		echo '<div class="bace-content__category col-sm-3 col-xs-4">';
 		if(has_category_thumbnail( $cat_id[ $index ] )) { ?>
-			<figure class="bace-content__thumbnail"><a href="<?php echo $result_two[ $index ]; ?>" class="bace-content__thumbnail-link"><?php the_category_thumbnail( $cat_id[ $index ] ); ?></a></figure>
+			<figure class="bace-content__thumbnail">
+				<a href="<?php echo $result_two[ $index ]; ?>" class="bace-content__thumbnail-link">
+					<?php the_category_thumbnail( $cat_id[ $index ] ); ?>
+				</a>
+			</figure>
 		<?php }
 		echo '<h4 class="bace-content__title"><a href=' . $result_two[ $index ] . '>' . $category . '</a></h4>';
 		echo '</div>';

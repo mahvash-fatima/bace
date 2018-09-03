@@ -1,11 +1,13 @@
 <section class="bace-main">
 	<div class="row">
 		<div class="bace-content col-md-8">
-			<div class="bace-content__category-container row">
+			<div class="bace-content__category-container">
 				<h2 class="bace-title bace-content__category-title">
 					<?php echo esc_textarea( get_theme_mod( 'bace_category_text_setting', 'Glimpses of Exhibition' ) ); ?>
 				</h2>
-				<?php get_template_part( 'template-parts/category-content' ); ?>
+				<div class="row">
+					<?php get_template_part( 'template-parts/category-content' ); ?>
+				</div>
 			</div>
 			<div class="bace-content__social row">
 				<div class="bace-content__twitter col-md-5">
